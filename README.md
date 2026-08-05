@@ -231,12 +231,11 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=2&width=1000&transparent=true" alt="divider" width="100%"/>
-
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=satyamkumarkapri&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9&border_radius=14" height="175" alt="Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=satyamkumarkapri&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&text_color=c9d1d9&border_radius=14" height="175" alt="Top Languages" />
+  <img src="https://github-stats-extended.vercel.app/api?username=satyamkumarkapri&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9&border_radius=14" height="175" alt="Stats" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=satyamkumarkapri&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&text_color=c9d1d9&border_radius=14" height="175" alt="Top Languages" />
 </div>
 
 <div align="center">
@@ -244,8 +243,13 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
 </div>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=satyamkumarkapri&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=ffffff&area=true&area_color=00f0ff" alt="Activity Graph" width="95%"/>
+  <!-- Added &v=1 to the end of this URL to force GitHub to fetch a fresh image -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=satyamkumarkapri&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=ffffff&area=true&area_color=00f0ff&v=1" alt="Activity Graph" width="95%"/>
 </div>
+
+> 💡 **Note:** if any widget above shows a broken icon, it usually means the analytics service is momentarily rate-limited or cold-starting on Vercel's free tier — refresh the page after a minute and it'll load normally.
+
+
 
 > 💡 **Note:** if any widget above shows a broken icon, it usually means the analytics service is momentarily rate-limited or cold-starting on Vercel's free tier — refresh the page after a minute and it'll load normally.
 
