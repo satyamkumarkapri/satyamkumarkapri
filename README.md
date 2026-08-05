@@ -217,12 +217,20 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
 
 **🔥 Top Repositories**
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=satyamkumarkapri&repo=HealthNet&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9" height="150" alt="HealthNet pin"/>
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=satyamkumarkapri&repo=Hospital-Navigation-System&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9" height="150" alt="Hospital Navigation pin"/>
+<!-- Switched to github-stats-extended for reliable uptime -->
+<img src="https://github-stats-extended.vercel.app/api/pin/?username=satyamkumarkapri&repo=HealthNet&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9" height="150" alt="HealthNet pin"/>
+<img src="https://github-stats-extended.vercel.app/api/pin/?username=satyamkumarkapri&repo=Hospital-Navigation-System&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=8A2BE2&text_color=c9d1d9" height="150" alt="Hospital Navigation pin"/>
 
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00F0FF,100:8A2BE2&height=2&width=1000&transparent=true" alt="divider" width="100%"/>
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+  <!-- Switched to a reliable community load-balancing endpoint since the official vercel app is suspended -->
+  <img src="https://trophygithubreadmelang.cybee.dpdns.org/?username=satyamkumarkapri&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="GitHub Trophies"/>
+</div>
 
 ## 🏆 GitHub Trophies
 
