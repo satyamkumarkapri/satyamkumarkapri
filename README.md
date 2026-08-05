@@ -232,12 +232,6 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
   <img src="https://trophygithubreadmelang.cybee.dpdns.org/?username=satyamkumarkapri&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="GitHub Trophies"/>
 </div>
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=satyamkumarkapri&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="GitHub Trophies"/>
-</div>
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=2&width=1000&transparent=true" alt="divider" width="100%"/>
 ## 📊 GitHub Analytics
 
