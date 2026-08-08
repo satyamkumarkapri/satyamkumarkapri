@@ -252,9 +252,6 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
 > 💡 **Note:** if any widget above shows a broken icon, it usually means the analytics service is momentarily rate-limited or cold-starting on Vercel's free tier — refresh the page after a minute and it'll load normally.
 
 
-
-> 💡 **Note:** if any widget above shows a broken icon, it usually means the analytics service is momentarily rate-limited or cold-starting on Vercel's free tier — refresh the page after a minute and it'll load normally.
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00F0FF,100:8A2BE2&height=2&width=1000&transparent=true" alt="divider" width="100%"/>
 
 ## 💬 Testimonials & Collab
