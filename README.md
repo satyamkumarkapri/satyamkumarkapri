@@ -246,7 +246,7 @@ Actively building and shipping new AI/ML and full-stack projects — check my pi
 
 <div align="center">
   <!-- Added &v=1 to the end of this URL to force GitHub to fetch a fresh image -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=satyamkumarkapri&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=ffffff&area=true&area_color=00f0ff&v=1" alt="Activity Graph" width="95%"/>
+  <img src="https://github-activity-chart.vercel.app/graph?username=satyamkumarkapri&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=ffffff&area=true&area_color=00f0ff" alt="Activity Graph" width="95%"/>
 </div>
 
 > 💡 **Note:** if any widget above shows a broken icon, it usually means the analytics service is momentarily rate-limited or cold-starting on Vercel's free tier — refresh the page after a minute and it'll load normally.
