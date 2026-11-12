@@ -74,7 +74,7 @@ My verified competitive programming and algorithmic credentials:
 <td width="50%" valign="top">
 
 ### 🏆 CodeChef Credentials
-- **Competitive Status:** **4-Star Programmer** (Division 2)
+- **Competitive Status:** **4★ Programmer** (Division 2)
 - **Peak Contest Rating:** **2128** (Ranked **#3,556** Globally & **#3,112** in India)
 - **DSA Peak Rating:** **1904** (Ranked **#445** Globally & **#422** in India)
 - **Volume Solved:** **640+** Algorithmic Challenges Solved
