@@ -1,34 +1,34 @@
 <!-- ========================================================================= -->
-<!-- SATYAM KUMAR KAPRI // OBSIDIAN GOLD — ENGINEERING EDITION                -->
+<!-- SATYAM KUMAR KAPRI // ROYAL OBSIDIAN GOLD — ELITE ENGINEERING EDITION    -->
 <!-- Personal Portfolio: https://satyamkapriportfolio.vercel.app              -->
 <!-- GitHub: https://github.com/satyamkumarkapri                               -->
 <!-- ========================================================================= -->
 
 <div align="center">
 
-  <img src="assets/hero-banner.svg" alt="Satyam Kumar Kapri — Obsidian Gold Engineering Identity" width="100%" />
+  <img src="assets/hero-banner.svg" alt="Satyam Kumar Kapri — Royal Obsidian Gold Engineering Identity" width="100%" />
 
   <br/><br/>
 
   <!-- Quick Access Navigation Strip -->
   <a href="https://satyamkapriportfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F2C879&labelColor=171717" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F0C978&labelColor=15191F" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F2C879&labelColor=171717" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F0C978&labelColor=15191F" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://codechef.com/users/kl_2500031975" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-4%E2%98%85%20(2128%20Peak)-C5A059?style=for-the-badge&logo=codechef&logoColor=F2C879&labelColor=171717" alt="CodeChef" />
+    <img src="https://img.shields.io/badge/CodeChef-4%E2%98%85%20(2128%20Peak)-C5A059?style=for-the-badge&logo=codechef&logoColor=F0C978&labelColor=15191F" alt="CodeChef" />
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/satyamkapri17/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-1780%20(Top%209.3%25)-C5A059?style=for-the-badge&logo=leetcode&logoColor=F2C879&labelColor=171717" alt="LeetCode" />
+    <img src="https://img.shields.io/badge/LeetCode-1780%20(Top%209.3%25)-C5A059?style=for-the-badge&logo=leetcode&logoColor=F0C978&labelColor=15191F" alt="LeetCode" />
   </a>
   &nbsp;
   <a href="mailto:satyamkumarkapri17@gmail.com">
-    <img src="https://img.shields.io/badge/Contact-Get%20In%20Touch-C5A059?style=for-the-badge&logo=gmail&logoColor=F2C879&labelColor=171717" alt="Email" />
+    <img src="https://img.shields.io/badge/Contact-Get%20In%20Touch-C5A059?style=for-the-badge&logo=gmail&logoColor=F0C978&labelColor=15191F" alt="Email" />
   </a>
 
   <br/><br/>
@@ -290,20 +290,20 @@ Dynamic GitHub analytics sourced directly from active contributions:
 
 <div align="center">
 
-  <!-- Obsidian Gold Statistics Dashboard -->
-  <img src="https://github-stats-extended.vercel.app/api?username=satyamkumarkapri&show_icons=true&bg_color=090909&title_color=E7D5A5&text_color=A6A29A&icon_color=C5A059&border_color=3A3020&hide_border=false&border_radius=8" height="175" alt="GitHub Stats" />
+  <!-- Royal Obsidian Gold Statistics Dashboard -->
+  <img src="https://github-stats-extended.vercel.app/api?username=satyamkumarkapri&show_icons=true&bg_color=090B0E&title_color=E8D5A5&text_color=A6A29A&icon_color=C5A059&border_color=493A23&hide_border=false&border_radius=8" height="175" alt="GitHub Stats" />
   &nbsp;
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=satyamkumarkapri&layout=compact&bg_color=090909&title_color=E7D5A5&text_color=A6A29A&border_color=3A3020&hide_border=false&border_radius=8" height="175" alt="Top Languages" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=satyamkumarkapri&layout=compact&bg_color=090B0E&title_color=E8D5A5&text_color=A6A29A&border_color=493A23&hide_border=false&border_radius=8" height="175" alt="Top Languages" />
 
   <br/><br/>
 
-  <!-- Obsidian Gold Streak Statistics -->
-  <img src="https://streak-stats.demolab.com/?user=satyamkumarkapri&background=090909&border=3A3020&stroke=C5A059&ring=C5A059&fire=F2C879&currStreakNum=E7D5A5&sideNums=E7D5A5&currStreakLabel=C5A059&sideLabels=A6A29A&dates=A6A29A&border_radius=8" alt="GitHub Streak" width="95%" />
+  <!-- Royal Obsidian Gold Streak Statistics -->
+  <img src="https://streak-stats.demolab.com/?user=satyamkumarkapri&background=090B0E&border=493A23&stroke=C5A059&ring=C5A059&fire=F0C978&currStreakNum=E8D5A5&sideNums=E8D5A5&currStreakLabel=C5A059&sideLabels=A6A29A&dates=A6A29A&border_radius=8" alt="GitHub Streak" width="95%" />
 
   <br/><br/>
 
-  <!-- Obsidian Gold Activity Graph -->
-  <img src="https://github-activity-chart.vercel.app/graph?username=satyamkumarkapri&bg_color=090909&color=C5A059&line=C5A059&point=F2C879&area=true&area_color=282012" alt="Activity Graph" width="95%" />
+  <!-- Royal Obsidian Gold Activity Graph -->
+  <img src="https://github-activity-chart.vercel.app/graph?username=satyamkumarkapri&bg_color=090B0E&color=C5A059&line=C5A059&point=F0C978&area=true&area_color=15191F" alt="Activity Graph" width="95%" />
 
   <br/><br/>
 
@@ -401,33 +401,33 @@ Strategic engineering roadmap guiding development focus and technical initiative
 <div align="center">
 
   <a href="https://satyamkapriportfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F2C879&labelColor=171717" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F0C978&labelColor=15191F" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://github.com/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-satyamkumarkapri-C5A059?style=for-the-badge&logo=github&logoColor=F2C879&labelColor=171717" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-satyamkumarkapri-C5A059?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=15191F" alt="GitHub" />
   </a>
   &nbsp;
   <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F2C879&labelColor=171717" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F0C978&labelColor=15191F" alt="LinkedIn" />
   </a>
 
   <br/><br/>
 
   <a href="https://codechef.com/users/kl_2500031975" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-kl__2500031975-C5A059?style=for-the-badge&logo=codechef&logoColor=F2C879&labelColor=171717" alt="CodeChef" />
+    <img src="https://img.shields.io/badge/CodeChef-kl__2500031975-C5A059?style=for-the-badge&logo=codechef&logoColor=F0C978&labelColor=15191F" alt="CodeChef" />
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/satyamkapri17/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-satyamkapri17-C5A059?style=for-the-badge&logo=leetcode&logoColor=F2C879&labelColor=171717" alt="LeetCode" />
+    <img src="https://img.shields.io/badge/LeetCode-satyamkapri17-C5A059?style=for-the-badge&logo=leetcode&logoColor=F0C978&labelColor=15191F" alt="LeetCode" />
   </a>
   &nbsp;
   <a href="mailto:satyamkumarkapri17@gmail.com">
-    <img src="https://img.shields.io/badge/Email-satyamkumarkapri17@gmail.com-C5A059?style=for-the-badge&logo=gmail&logoColor=F2C879&labelColor=171717" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-satyamkumarkapri17@gmail.com-C5A059?style=for-the-badge&logo=gmail&logoColor=F0C978&labelColor=15191F" alt="Email" />
   </a>
   &nbsp;
   <a href="https://www.instagram.com/btw_its._satyam/" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-btw__its.__satyam-C5A059?style=for-the-badge&logo=instagram&logoColor=F2C879&labelColor=171717" alt="Instagram" />
+    <img src="https://img.shields.io/badge/Instagram-btw__its.__satyam-C5A059?style=for-the-badge&logo=instagram&logoColor=F0C978&labelColor=15191F" alt="Instagram" />
   </a>
 
 </div>

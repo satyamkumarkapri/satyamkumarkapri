@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-Generate Obsidian Gold SVG Assets for Satyam Kumar Kapri's GitHub Profile.
-Colors:
-  Primary Background:    #090909
-  Secondary Background:  #111111
-  Card Background:       #171717
-  Elevated Surface:      #202020
-  Primary Gold:          #C5A059
-  Champagne Gold:        #E7D5A5
-  Bright Gold:           #F2C879
-  Deep Gold:             #9B773B
-  Primary Text:          #F5F1E8
-  Secondary Text:        #A6A29A
-  Borders:               #3A3020
-  Gold Gradient:         #9B773B -> #C5A059 -> #E7D5A5
+Generate Royal Obsidian Gold SVG Assets for Satyam Kumar Kapri's GitHub Profile.
+Palette:
+  Primary Background:    #090B0E (Deep Royal Obsidian Black)
+  Secondary Background:  #101318 (Midnight Charcoal)
+  Card Background:       #15191F (Elevated Charcoal Surface)
+  Antique Gold:          #C5A059 (Buttons, badges, accents)
+  Champagne Gold:        #E8D5A5 (Headings, identity highlights)
+  Hover Gold:            #F0C978 (Interactive & glowing accents)
+  Warm Ivory:            #F5F0E6 (Readable body text)
+  Secondary Text:        #A6A29A (Muted silver metadata)
+  Border:                #493A23 (Subtle bronze/gold borders)
 """
 
 import os
-import math
+import json
+import base64
+import io
+from PIL import Image
 
 OUTPUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets"))
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -32,8 +32,6 @@ def generate_hero_banner():
         hero_path = os.path.join(OUTPUT_DIR, "hero.png")
     
     if os.path.exists(hero_path):
-        import base64, io
-        from PIL import Image
         im = Image.open(hero_path)
         w, h = im.size
         target_w = 460
@@ -45,43 +43,43 @@ def generate_hero_banner():
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 420" width="100%" height="auto" style="background: transparent;">
   <defs>
-    <!-- Background Gradient -->
-    <radialGradient id="bg-glow" cx="40%" cy="30%" r="75%">
-      <stop offset="0%" stop-color="#1c160c" stop-opacity="0.85"/>
-      <stop offset="50%" stop-color="#111111" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#090909" stop-opacity="1"/>
+    <!-- Royal Obsidian Background Gradient -->
+    <radialGradient id="bg-glow" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#181510" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#101318" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#090B0E" stop-opacity="1"/>
     </radialGradient>
 
-    <!-- Gold Gradients -->
+    <!-- Royal Gold Gradients -->
     <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#9B773B"/>
-      <stop offset="35%" stop-color="#F2C879"/>
-      <stop offset="70%" stop-color="#C5A059"/>
-      <stop offset="100%" stop-color="#E7D5A5"/>
+      <stop offset="0%" stop-color="#C5A059"/>
+      <stop offset="35%" stop-color="#F0C978"/>
+      <stop offset="70%" stop-color="#E8D5A5"/>
+      <stop offset="100%" stop-color="#C5A059"/>
     </linearGradient>
 
     <linearGradient id="gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#C5A059" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#3A3020" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#E7D5A5" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#493A23" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E8D5A5" stop-opacity="0.7"/>
     </linearGradient>
 
     <linearGradient id="frame-gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F2C879" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#785E2B" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#F0C978" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#493A23" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#C5A059" stop-opacity="0.9"/>
     </linearGradient>
 
     <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1f1a12"/>
-      <stop offset="50%" stop-color="#2a2215"/>
-      <stop offset="100%" stop-color="#1f1a12"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="50%" stop-color="#1b212a"/>
+      <stop offset="100%" stop-color="#15191F"/>
     </linearGradient>
 
     <!-- Technical Grid Pattern -->
     <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C5A059" stroke-width="0.5" stroke-opacity="0.07"/>
-      <circle cx="0" cy="0" r="1" fill="#C5A059" fill-opacity="0.18"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C5A059" stroke-width="0.5" stroke-opacity="0.06"/>
+      <circle cx="0" cy="0" r="1" fill="#C5A059" fill-opacity="0.16"/>
     </pattern>
 
     <!-- Subtle Glow Filter -->
@@ -132,10 +130,10 @@ def generate_hero_banner():
   <g opacity="0.45">
     <path d="M 30 180 H 80 L 110 210 H 160" fill="none" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1.2"/>
     <path d="M 60 40 V 80 L 90 110 V 150" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1"/>
-    <circle cx="160" cy="210" r="3" fill="#F2C879"/>
+    <circle cx="160" cy="210" r="3" fill="#F0C978"/>
     <circle cx="60" cy="40" r="2.5" fill="#C5A059"/>
     <line x1="80" y1="180" x2="140" y2="120" class="synapse" stroke-opacity="0.25"/>
-    <circle cx="140" cy="120" r="3" fill="#E7D5A5"/>
+    <circle cx="140" cy="120" r="3" fill="#E8D5A5"/>
   </g>
 
   <!-- Center Decorative Glow -->
@@ -148,17 +146,17 @@ def generate_hero_banner():
   <path d="M 1176 376 V 396 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
 
   <!-- ==================== LEFT / CENTER IDENTITY ==================== -->
-  <!-- Top Obsidian Gold Badge -->
+  <!-- Top Royal Obsidian Gold Badge -->
   <g transform="translate(60, 48)">
-    <rect x="0" y="-13" width="410" height="26" rx="13" fill="url(#badge-grad)" stroke="#3A3020" stroke-width="1"/>
-    <circle cx="18" cy="0" r="3" fill="#F2C879"/>
-    <circle cx="18" cy="0" r="6" fill="#F2C879" fill-opacity="0.25" class="pulse-node"/>
-    <text x="32" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#E7D5A5" letter-spacing="2">
-      &#10022; OBSIDIAN GOLD // VERIFIED SYSTEM ARCHITECT &#10022;
+    <rect x="0" y="-13" width="418" height="26" rx="13" fill="url(#badge-grad)" stroke="#493A23" stroke-width="1"/>
+    <circle cx="18" cy="0" r="3" fill="#F0C978"/>
+    <circle cx="18" cy="0" r="6" fill="#F0C978" fill-opacity="0.25" class="pulse-node"/>
+    <text x="32" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#E8D5A5" letter-spacing="2">
+      &#10022; ROYAL OBSIDIAN GOLD // VERIFIED ARCHITECT &#10022;
     </text>
   </g>
 
-  <!-- Main Name Heading -->
+  <!-- Main Name Heading in Champagne Gold Focus -->
   <g transform="translate(60, 134)">
     <text class="text-mono" font-size="50" font-weight="900" fill="url(#gold-grad)" letter-spacing="5" filter="url(#subtle-glow)">
       SATYAM KUMAR KAPRI
@@ -167,7 +165,7 @@ def generate_hero_banner():
 
   <!-- Roles & Architecture Subtitle -->
   <g transform="translate(60, 178)">
-    <text class="text-mono" font-size="14.5" font-weight="700" fill="#E7D5A5" letter-spacing="3.5">
+    <text class="text-mono" font-size="14.5" font-weight="700" fill="#E8D5A5" letter-spacing="3.5">
       AI / ML ENGINEER  &#8226;  FULL-STACK ARCHITECT  &#8226;  COMPETITIVE PROGRAMMER
     </text>
   </g>
@@ -181,9 +179,9 @@ def generate_hero_banner():
 
   <!-- Architectural Focus Line -->
   <g transform="translate(60, 256)">
-    <line x1="0" y1="0" x2="720" y2="0" stroke="#3A3020" stroke-width="1"/>
+    <line x1="0" y1="0" x2="720" y2="0" stroke="#493A23" stroke-width="1"/>
     <line x1="0" y1="0" x2="160" y2="0" stroke="#C5A059" stroke-width="1.5"/>
-    <circle cx="160" cy="0" r="2.5" fill="#F2C879"/>
+    <circle cx="160" cy="0" r="2.5" fill="#F0C978"/>
     <text x="180" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#A6A29A" letter-spacing="2">
       SYSTEM DESIGN  &#8226;  APPLIED ML  &#8226;  ENTERPRISE SCALE
     </text>
@@ -191,80 +189,80 @@ def generate_hero_banner():
 
   <!-- ==================== RIGHT PORTRAIT SECTION ==================== -->
   <!-- Ambient Gold Glow Behind Portrait -->
-  <ellipse cx="1005" cy="178" rx="150" ry="160" fill="#C5A059" fill-opacity="0.12" filter="url(#subtle-glow)"/>
+  <ellipse cx="1005" cy="178" rx="150" ry="160" fill="#C5A059" fill-opacity="0.10" filter="url(#subtle-glow)"/>
 
   <!-- Portrait Frame Exterior Outer Ring -->
-  <rect x="878" y="34" width="254" height="288" rx="18" fill="#121212" stroke="url(#frame-gold-stroke)" stroke-width="1.8"/>
+  <rect x="878" y="34" width="254" height="288" rx="18" fill="#15191F" stroke="url(#frame-gold-stroke)" stroke-width="1.8"/>
 
   <!-- Portrait Frame Inner Inset -->
-  <rect x="882" y="38" width="246" height="280" rx="15" fill="#0C0C0C" stroke="#3A3020" stroke-width="1"/>
+  <rect x="882" y="38" width="246" height="280" rx="15" fill="#101318" stroke="#493A23" stroke-width="1"/>
 
   <!-- Fine Decorative Corner Accents on Portrait Frame -->
-  <path d="M 870 52 V 26 H 896" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
-  <path d="M 1140 52 V 26 H 1114" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
-  <path d="M 870 304 V 330 H 896" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
-  <path d="M 1140 304 V 330 H 1114" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 870 52 V 26 H 896" fill="none" stroke="#F0C978" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 1140 52 V 26 H 1114" fill="none" stroke="#F0C978" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 870 304 V 330 H 896" fill="none" stroke="#F0C978" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 1140 304 V 330 H 1114" fill="none" stroke="#F0C978" stroke-width="1.8" stroke-opacity="0.9"/>
 
   <!-- Circuit Trace Anchors into Portrait -->
   <line x1="820" y1="178" x2="878" y2="178" stroke="#C5A059" stroke-opacity="0.5" stroke-width="1.2" stroke-dasharray="3, 3"/>
-  <circle cx="820" cy="178" r="3" fill="#F2C879"/>
+  <circle cx="820" cy="178" r="3" fill="#F0C978"/>
   <circle cx="878" cy="178" r="2.5" fill="#C5A059"/>
 
   <!-- The Photograph (Preserving Aspect Ratio & Transparency) -->
   <g clip-path="url(#portrait-clip)">
     <!-- Dark Gradient Fill Behind Cutout for Contrast -->
-    <rect x="882" y="38" width="246" height="280" fill="#0F0F0F"/>
+    <rect x="882" y="38" width="246" height="280" fill="#101318"/>
     <ellipse cx="1005" cy="140" rx="90" ry="100" fill="#C5A059" fill-opacity="0.08"/>
     <image x="885" y="40" width="240" height="278" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{b64_photo}" xlink:href="data:image/png;base64,{b64_photo}"/>
   </g>
 
   <!-- Frame Inner Bevel Highlight -->
-  <rect x="882" y="38" width="246" height="280" rx="16" fill="none" stroke="#E7D5A5" stroke-opacity="0.25" stroke-width="1"/>
+  <rect x="882" y="38" width="246" height="280" rx="16" fill="none" stroke="#E8D5A5" stroke-opacity="0.25" stroke-width="1"/>
 
   <!-- Small Name Plate on Frame -->
   <g transform="translate(1005, 318)">
-    <rect x="-85" y="-10" width="170" height="20" rx="10" fill="#18140D" stroke="#C5A059" stroke-width="1"/>
-    <text text-anchor="middle" y="3.5" class="code-font" font-size="9" font-weight="700" fill="#F2C879" letter-spacing="1.2">
+    <rect x="-85" y="-10" width="170" height="20" rx="10" fill="#15191F" stroke="#C5A059" stroke-width="1"/>
+    <text text-anchor="middle" y="3.5" class="code-font" font-size="9" font-weight="700" fill="#F0C978" letter-spacing="1.2">
       SATYAM KUMAR KAPRI
     </text>
   </g>
 
   <!-- ==================== BOTTOM HIGHLIGHTS STRIP ==================== -->
   <g transform="translate(600, 375)">
-    <rect x="-550" y="-23" width="1100" height="46" rx="8" fill="#141414" stroke="#3A3020" stroke-width="1"/>
+    <rect x="-550" y="-23" width="1100" height="46" rx="8" fill="#15191F" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 1: Education -->
-    <text x="-520" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+    <text x="-520" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E8D5A5" letter-spacing="0.5">
       KL UNIVERSITY
     </text>
     <text x="-412" y="5" class="code-font" font-size="11" fill="#A6A29A">
       B.Tech CSE (9.12 CGPA)
     </text>
 
-    <line x1="-210" y1="-11" x2="-210" y2="11" stroke="#3A3020" stroke-width="1"/>
+    <line x1="-210" y1="-11" x2="-210" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 2: CodeChef -->
-    <text x="-185" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F2C879" letter-spacing="0.5">
+    <text x="-185" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F0C978" letter-spacing="0.5">
       CODECHEF 4&#9733;
     </text>
     <text x="-77" y="5" class="code-font" font-size="11" fill="#A6A29A">
       2128 Peak (Div 2)
     </text>
 
-    <line x1="80" y1="-11" x2="80" y2="11" stroke="#3A3020" stroke-width="1"/>
+    <line x1="80" y1="-11" x2="80" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 3: LeetCode -->
-    <text x="105" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+    <text x="105" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E8D5A5" letter-spacing="0.5">
       LEETCODE
     </text>
     <text x="187" y="5" class="code-font" font-size="11" fill="#A6A29A">
       Top 9.35% (1780)
     </text>
 
-    <line x1="330" y1="-11" x2="330" y2="11" stroke="#3A3020" stroke-width="1"/>
+    <line x1="330" y1="-11" x2="330" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 4: Solved -->
-    <text x="355" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F2C879" letter-spacing="0.5">
+    <text x="355" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F0C978" letter-spacing="0.5">
       640+
     </text>
     <text x="400" y="5" class="code-font" font-size="11" fill="#A6A29A">
@@ -281,13 +279,13 @@ def generate_terminal_profile():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 380" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#3A3020" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#9B773B" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#493A23" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E8D5A5" stop-opacity="0.6"/>
     </linearGradient>
     <linearGradient id="term-header" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#141414"/>
-      <stop offset="100%" stop-color="#1c1c1c"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#101318"/>
     </linearGradient>
   </defs>
 
@@ -301,21 +299,21 @@ def generate_terminal_profile():
     }
     .cursor {
       animation: blink 1s infinite;
-      fill: #F2C879;
+      fill: #F0C978;
     }
   </style>
 
   <!-- Terminal Window Body -->
-  <rect x="2" y="2" width="936" height="376" rx="10" fill="#0C0C0C" stroke="url(#term-border)" stroke-width="1.2"/>
+  <rect x="2" y="2" width="936" height="376" rx="10" fill="#090B0E" stroke="url(#term-border)" stroke-width="1.2"/>
 
   <!-- Terminal Header Bar -->
-  <path d="M 2 12 Q 2 2 12 2 L 928 2 Q 938 2 938 12 L 938 38 L 2 38 Z" fill="url(#term-header)" stroke="#3A3020" stroke-width="0.8"/>
-  <line x1="2" y1="38" x2="938" y2="38" stroke="#3A3020" stroke-width="1"/>
+  <path d="M 2 12 Q 2 2 12 2 L 928 2 Q 938 2 938 12 L 938 38 L 2 38 Z" fill="url(#term-header)" stroke="#493A23" stroke-width="0.8"/>
+  <line x1="2" y1="38" x2="938" y2="38" stroke="#493A23" stroke-width="1"/>
 
-  <!-- Window Action Buttons (Luxury Obsidian Gold Theme) -->
-  <circle cx="24" cy="20" r="5.5" fill="#3A3020" stroke="#52432c" stroke-width="0.8"/>
-  <circle cx="44" cy="20" r="5.5" fill="#9B773B" stroke="#b88d46" stroke-width="0.8"/>
-  <circle cx="64" cy="20" r="5.5" fill="#C5A059" stroke="#e8c278" stroke-width="0.8"/>
+  <!-- Window Action Buttons (Royal Obsidian Gold Theme) -->
+  <circle cx="24" cy="20" r="5.5" fill="#493A23" stroke="#66512e" stroke-width="0.8"/>
+  <circle cx="44" cy="20" r="5.5" fill="#C5A059" stroke="#dbb46b" stroke-width="0.8"/>
+  <circle cx="64" cy="20" r="5.5" fill="#F0C978" stroke="#fce09d" stroke-width="0.8"/>
 
   <!-- Terminal Window Title -->
   <text x="470" y="24" text-anchor="middle" class="term-font" font-size="11.5" font-weight="600" fill="#A6A29A" letter-spacing="1.2">
@@ -334,39 +332,39 @@ def generate_terminal_profile():
   <g transform="translate(30, 48)" class="term-font">
     <!-- Command 1: whoami -->
     <text x="0" y="24" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">whoami</tspan>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">whoami</tspan>
     </text>
-    <text x="20" y="46" font-size="13" fill="#E7D5A5" font-weight="600">
+    <text x="20" y="46" font-size="13" fill="#E8D5A5" font-weight="600">
       Satyam Kumar Kapri <tspan fill="#A6A29A" font-weight="400">· Computer Science Engineer &amp; AI Systems Developer</tspan>
     </text>
 
     <!-- Command 2: education -->
     <text x="0" y="80" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">education</tspan>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">education</tspan>
     </text>
-    <text x="20" y="102" font-size="13" fill="#F5F1E8">
-      B.Tech Computer Science and Engineering <tspan fill="#C5A059">|</tspan> <tspan fill="#E7D5A5">KL University</tspan> <tspan fill="#A6A29A">(CGPA: 9.12 / 10.0)</tspan>
+    <text x="20" y="102" font-size="13" fill="#F5F0E6">
+      B.Tech Computer Science and Engineering <tspan fill="#C5A059">|</tspan> <tspan fill="#E8D5A5">KL University</tspan> <tspan fill="#A6A29A">(CGPA: 9.12 / 10.0)</tspan>
     </text>
 
     <!-- Command 3: interests -->
     <text x="0" y="136" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">interests</tspan>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">interests</tspan>
     </text>
-    <text x="20" y="158" font-size="13" fill="#E7D5A5">
-      Artificial Intelligence <tspan fill="#3A3020">•</tspan> Machine Learning <tspan fill="#3A3020">•</tspan> Full-Stack Architecture <tspan fill="#3A3020">•</tspan> DSA <tspan fill="#3A3020">•</tspan> System Design <tspan fill="#3A3020">•</tspan> Entrepreneurship
+    <text x="20" y="158" font-size="13" fill="#E8D5A5">
+      Artificial Intelligence <tspan fill="#493A23">•</tspan> Machine Learning <tspan fill="#493A23">•</tspan> Full-Stack Architecture <tspan fill="#493A23">•</tspan> DSA <tspan fill="#493A23">•</tspan> System Design <tspan fill="#493A23">•</tspan> Entrepreneurship
     </text>
 
     <!-- Command 4: philosophy -->
     <text x="0" y="192" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">philosophy</tspan>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">philosophy</tspan>
     </text>
-    <text x="20" y="214" font-size="13" fill="#F2C879" font-weight="600">
+    <text x="20" y="214" font-size="13" fill="#F0C978" font-weight="600">
       &#8220;Think Algorithmically. Engineer Intelligently. Build Relentlessly.&#8221;
     </text>
 
     <!-- Command 5: current_status -->
     <text x="0" y="248" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">sys_status --active-work</tspan>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">sys_status --active-work</tspan>
     </text>
     <text x="20" y="270" font-size="12.5" fill="#A6A29A">
       [OK] Architecting intelligent software platforms, solving hard graph/DP algorithms, shipping production systems.
@@ -374,7 +372,7 @@ def generate_terminal_profile():
 
     <!-- Command 6: prompt cursor -->
     <text x="0" y="304" font-size="13">
-      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <rect x="175" y="291" width="8" height="15" class="cursor"/>
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <rect x="175" y="291" width="8" height="15" class="cursor"/>
     </text>
   </g>
 </svg>"""
@@ -387,18 +385,18 @@ def generate_metrics_card():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 135" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#181818"/>
-      <stop offset="100%" stop-color="#101010"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#101318"/>
     </linearGradient>
     <linearGradient id="gold-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F2C879"/>
-      <stop offset="50%" stop-color="#E7D5A5"/>
+      <stop offset="0%" stop-color="#F0C978"/>
+      <stop offset="50%" stop-color="#E8D5A5"/>
       <stop offset="100%" stop-color="#C5A059"/>
     </linearGradient>
     <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3A3020"/>
-      <stop offset="50%" stop-color="#785e2e"/>
-      <stop offset="100%" stop-color="#3A3020"/>
+      <stop offset="0%" stop-color="#493A23"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#493A23"/>
     </linearGradient>
   </defs>
 
@@ -418,7 +416,7 @@ def generate_metrics_card():
     <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
       2128
     </text>
-    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
       PEAK CODECHEF
     </text>
     <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
@@ -434,7 +432,7 @@ def generate_metrics_card():
     <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="32" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
       FOUR STAR
     </text>
-    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
       CODECHEF STATUS
     </text>
     <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
@@ -450,7 +448,7 @@ def generate_metrics_card():
     <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
       1904
     </text>
-    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
       DSA PEAK RATING
     </text>
     <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
@@ -466,7 +464,7 @@ def generate_metrics_card():
     <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
       640+
     </text>
-    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
       PROBLEMS SOLVED
     </text>
     <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
@@ -484,18 +482,18 @@ def generate_gold_divider():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 24" width="100%" height="24" style="background: transparent;">
   <defs>
     <linearGradient id="divider-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#090909" stop-opacity="0"/>
-      <stop offset="25%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#090B0E" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#493A23" stop-opacity="0.8"/>
       <stop offset="45%" stop-color="#C5A059" stop-opacity="1"/>
-      <stop offset="50%" stop-color="#F2C879" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#F0C978" stop-opacity="1"/>
       <stop offset="55%" stop-color="#C5A059" stop-opacity="1"/>
-      <stop offset="75%" stop-color="#3A3020" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+      <stop offset="75%" stop-color="#493A23" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#090B0E" stop-opacity="0"/>
     </linearGradient>
   </defs>
   <line x1="40" y1="12" x2="960" y2="12" stroke="url(#divider-grad)" stroke-width="1.2"/>
-  <circle cx="500" cy="12" r="4" fill="#090909" stroke="#F2C879" stroke-width="1.5"/>
-  <circle cx="500" cy="12" r="1.5" fill="#E7D5A5"/>
+  <circle cx="500" cy="12" r="4" fill="#090B0E" stroke="#F0C978" stroke-width="1.5"/>
+  <circle cx="500" cy="12" r="1.5" fill="#E8D5A5"/>
   <polygon points="460,12 466,9 472,12 466,15" fill="#C5A059" fill-opacity="0.5"/>
   <polygon points="540,12 534,9 528,12 534,15" fill="#C5A059" fill-opacity="0.5"/>
 </svg>"""
@@ -508,13 +506,13 @@ def generate_engineering_roadmap():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 240" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="card-surface" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#161616"/>
-      <stop offset="100%" stop-color="#0E0E0E"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#101318"/>
     </linearGradient>
     <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="0%" stop-color="#493A23"/>
       <stop offset="50%" stop-color="#C5A059"/>
-      <stop offset="100%" stop-color="#3A3020"/>
+      <stop offset="100%" stop-color="#493A23"/>
     </linearGradient>
   </defs>
 
@@ -533,73 +531,73 @@ def generate_engineering_roadmap():
   </style>
 
   <!-- Background Base Container -->
-  <rect x="2" y="2" width="936" height="236" rx="12" fill="#0A0A0A" stroke="#3A3020" stroke-width="1"/>
+  <rect x="2" y="2" width="936" height="236" rx="12" fill="#090B0E" stroke="#493A23" stroke-width="1"/>
 
   <!-- Connecting Backbone Rail -->
   <line x1="80" y1="46" x2="860" y2="46" stroke="url(#line-grad)" stroke-width="1.8"/>
 
   <!-- Node 01: Artificial Intelligence -->
   <g transform="translate(18, 20)">
-    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
-    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">01</text>
-    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
-    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">ARTIFICIAL INTEL.</text>
+    <circle cx="75" cy="26" r="14" fill="#15191F" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F0C978">01</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#493A23" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E8D5A5" letter-spacing="0.5">ARTIFICIAL INTEL.</text>
     <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Building intelligent systems,</text>
     <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">applied ML pipelines, and</text>
     <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">modern AI architectures.</text>
-    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#101318"/>
     <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">ML · DEEP LEARNING</text>
   </g>
 
   <!-- Node 02: Software Engineering -->
   <g transform="translate(202, 20)">
-    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
-    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">02</text>
-    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
-    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">SOFTWARE ENG.</text>
+    <circle cx="75" cy="26" r="14" fill="#15191F" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F0C978">02</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#493A23" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E8D5A5" letter-spacing="0.5">SOFTWARE ENG.</text>
     <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Designing robust, modular,</text>
     <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">and scalable enterprise</text>
     <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">full-stack web apps.</text>
-    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#101318"/>
     <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">JAVA · REACT · APIS</text>
   </g>
 
   <!-- Node 03: Competitive Programming -->
   <g transform="translate(386, 20)">
-    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
-    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">03</text>
-    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
-    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">COMPETITIVE CODING</text>
+    <circle cx="75" cy="26" r="14" fill="#15191F" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F0C978">03</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#493A23" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E8D5A5" letter-spacing="0.5">COMPETITIVE CODING</text>
     <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Strengthening algorithmic</text>
     <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">intuition: DP, graph theory,</text>
     <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">trees &amp; time efficiency.</text>
-    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#101318"/>
     <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">4★ CODECHEF · DSA</text>
   </g>
 
   <!-- Node 04: System Design -->
   <g transform="translate(570, 20)">
-    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
-    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">04</text>
-    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
-    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">SYSTEM DESIGN</text>
+    <circle cx="75" cy="26" r="14" fill="#15191F" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F0C978">04</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#493A23" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E8D5A5" letter-spacing="0.5">SYSTEM DESIGN</text>
     <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Scalable architectures,</text>
     <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">distributed caching, fault</text>
     <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">tolerance &amp; concurrency.</text>
-    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#101318"/>
     <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">DISTRIBUTED SYS</text>
   </g>
 
   <!-- Node 05: Entrepreneurship -->
   <g transform="translate(754, 20)">
-    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
-    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">05</text>
-    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
-    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">ENTREPRENEURSHIP</text>
+    <circle cx="75" cy="26" r="14" fill="#15191F" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F0C978">05</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#493A23" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E8D5A5" letter-spacing="0.5">ENTREPRENEURSHIP</text>
     <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Bridging technical rigor</text>
     <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">with business strategy to</text>
     <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">build viable products.</text>
-    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#101318"/>
     <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">VENTURES &amp; SCALE</text>
   </g>
 </svg>"""
@@ -612,13 +610,13 @@ def generate_profile_footer():
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 130" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="footer-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121212"/>
-      <stop offset="100%" stop-color="#0A0A0A"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#090B0E"/>
     </linearGradient>
     <linearGradient id="gold-stroke-f" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#493A23" stop-opacity="0.3"/>
       <stop offset="50%" stop-color="#C5A059" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#493A23" stop-opacity="0.3"/>
     </linearGradient>
   </defs>
 
@@ -647,7 +645,7 @@ def generate_profile_footer():
 
   <!-- Center Signature Text -->
   <g transform="translate(500, 38)">
-    <text text-anchor="middle" class="footer-title" font-size="18" fill="#E7D5A5">
+    <text text-anchor="middle" class="footer-title" font-size="18" fill="#E8D5A5">
       SATYAM KUMAR KAPRI
     </text>
   </g>
@@ -662,7 +660,7 @@ def generate_profile_footer():
   <!-- Subtitle Metadata -->
   <g transform="translate(500, 98)">
     <text text-anchor="middle" class="footer-mono" font-size="10.5" fill="#A6A29A" letter-spacing="1.5">
-      OBSIDIAN GOLD EDITION · ENGINEERED FOR EXCELLENCE · KL UNIVERSITY CSE
+      ROYAL OBSIDIAN GOLD EDITION · ENGINEERED FOR EXCELLENCE · KL UNIVERSITY CSE
     </text>
   </g>
 </svg>"""
@@ -672,7 +670,6 @@ def generate_profile_footer():
 
 def generate_datewise_contribution_graph():
     """Generates an authentic date-wise contribution matrix with months, weekdays, legend and snake."""
-    import json
     path_dark = os.path.join(OUTPUT_DIR, "github-contribution-grid-snake-dark.svg")
     path_light = os.path.join(OUTPUT_DIR, "github-contribution-grid-snake.svg")
     
@@ -684,11 +681,11 @@ def generate_datewise_contribution_graph():
         grid = []
 
     LEVEL_COLORS = {
-        0: ("#151515", "#221d14"),
-        1: ("#3d2f17", "#4d3b1e"),
-        2: ("#785e2b", "#8c6e33"),
+        0: ("#15191F", "#212731"),
+        1: ("#3a2d18", "#493A23"),
+        2: ("#6e5425", "#8c6e33"),
         3: ("#C5A059", "#d4ad63"),
-        4: ("#F2C879", "#ffe9a3")
+        4: ("#F0C978", "#ffe9a3")
     }
 
     MONTHS = [
@@ -724,20 +721,20 @@ def generate_datewise_contribution_graph():
     snake_svg = f"""
   <!-- Snake Animation Group -->
   <g class="snake-group">
-    <rect x="{snake_head_x - 28}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#E7D5A5" opacity="0.8"/>
-    <rect x="{snake_head_x - 14}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#F2C879" />
-    <rect x="{snake_head_x}" y="{snake_head_y}" width="11" height="11" rx="2.5" fill="#F2C879" stroke="#FFE9A3" stroke-width="1.2"/>
-    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 3.5}" r="1.2" fill="#090909" />
-    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 7.5}" r="1.2" fill="#090909" />
+    <rect x="{snake_head_x - 28}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#E8D5A5" opacity="0.8"/>
+    <rect x="{snake_head_x - 14}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#F0C978" />
+    <rect x="{snake_head_x}" y="{snake_head_y}" width="11" height="11" rx="2.5" fill="#F0C978" stroke="#FFE9A3" stroke-width="1.2"/>
+    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 3.5}" r="1.2" fill="#090B0E" />
+    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 7.5}" r="1.2" fill="#090B0E" />
   </g>
 """
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 205" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="grid-border" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#493A23" stop-opacity="0.8"/>
       <stop offset="50%" stop-color="#C5A059" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#493A23" stop-opacity="0.8"/>
     </linearGradient>
   </defs>
 
@@ -749,25 +746,25 @@ def generate_datewise_contribution_graph():
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }}
     @keyframes snake-pulse {{
-      0%, 100% {{ filter: drop-shadow(0 0 2px #F2C879); }}
-      50% {{ filter: drop-shadow(0 0 6px #F2C879); }}
+      0%, 100% {{ filter: drop-shadow(0 0 2px #F0C978); }}
+      50% {{ filter: drop-shadow(0 0 6px #F0C978); }}
     }}
     .snake-group {{
       animation: snake-pulse 3s infinite ease-in-out;
     }}
   </style>
 
-  <!-- Container Box -->
-  <rect x="2" y="2" width="836" height="201" rx="10" fill="#090909" stroke="url(#grid-border)" stroke-width="1.2"/>
+  <!-- Container Box in Royal Obsidian Black -->
+  <rect x="2" y="2" width="836" height="201" rx="10" fill="#090B0E" stroke="url(#grid-border)" stroke-width="1.2"/>
 
   <!-- Top Title Bar -->
-  <text x="24" y="26" class="title-font" font-size="11" font-weight="700" fill="#E7D5A5" letter-spacing="1">
+  <text x="24" y="26" class="title-font" font-size="11" font-weight="700" fill="#E8D5A5" letter-spacing="1">
     &#10022; 292 CONTRIBUTIONS IN THE LAST YEAR // 2025 &#8211; 2026 &#10022;
   </text>
   <text x="816" y="26" text-anchor="end" class="title-font" font-size="10.5" font-weight="600" fill="#C5A059" letter-spacing="0.8">
-    DATE-WISE CONTRIBUTION MATRIX
+    ROYAL OBSIDIAN GOLD ACTIVITY MATRIX
   </text>
-  <line x1="24" y1="36" x2="816" y2="36" stroke="#3A3020" stroke-width="0.8"/>
+  <line x1="24" y1="36" x2="816" y2="36" stroke="#493A23" stroke-width="0.8"/>
 
   <!-- Month Labels (X-Axis) -->
   {''.join(month_labels)}
@@ -788,11 +785,11 @@ def generate_datewise_contribution_graph():
 
   <g transform="translate(680, 175)">
     <text x="0" y="9" class="title-font" font-size="9" fill="#A6A29A">Less</text>
-    <rect x="28" y="0" width="10" height="10" rx="2" fill="#151515" stroke="#221d14" stroke-width="0.5"/>
-    <rect x="42" y="0" width="10" height="10" rx="2" fill="#3d2f17" stroke="#4d3b1e" stroke-width="0.5"/>
-    <rect x="56" y="0" width="10" height="10" rx="2" fill="#785e2b" stroke="#8c6e33" stroke-width="0.5"/>
+    <rect x="28" y="0" width="10" height="10" rx="2" fill="#15191F" stroke="#212731" stroke-width="0.5"/>
+    <rect x="42" y="0" width="10" height="10" rx="2" fill="#3a2d18" stroke="#493A23" stroke-width="0.5"/>
+    <rect x="56" y="0" width="10" height="10" rx="2" fill="#6e5425" stroke="#8c6e33" stroke-width="0.5"/>
     <rect x="70" y="0" width="10" height="10" rx="2" fill="#C5A059" stroke="#d4ad63" stroke-width="0.5"/>
-    <rect x="84" y="0" width="10" height="10" rx="2" fill="#F2C879" stroke="#ffe9a3" stroke-width="0.5"/>
+    <rect x="84" y="0" width="10" height="10" rx="2" fill="#F0C978" stroke="#ffe9a3" stroke-width="0.5"/>
     <text x="100" y="9" class="title-font" font-size="9" fill="#A6A29A">More</text>
   </g>
 </svg>"""

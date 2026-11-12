@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 130" width="100%" height="auto" style="background: transparent;">
   <defs>
     <linearGradient id="footer-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121212"/>
-      <stop offset="100%" stop-color="#0A0A0A"/>
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#090B0E"/>
     </linearGradient>
     <linearGradient id="gold-stroke-f" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#493A23" stop-opacity="0.3"/>
       <stop offset="50%" stop-color="#C5A059" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#493A23" stop-opacity="0.3"/>
     </linearGradient>
   </defs>
 
@@ -36,7 +36,7 @@
 
   <!-- Center Signature Text -->
   <g transform="translate(500, 38)">
-    <text text-anchor="middle" class="footer-title" font-size="18" fill="#E7D5A5">
+    <text text-anchor="middle" class="footer-title" font-size="18" fill="#E8D5A5">
       SATYAM KUMAR KAPRI
     </text>
   </g>
@@ -51,7 +51,7 @@
   <!-- Subtitle Metadata -->
   <g transform="translate(500, 98)">
     <text text-anchor="middle" class="footer-mono" font-size="10.5" fill="#A6A29A" letter-spacing="1.5">
-      OBSIDIAN GOLD EDITION · ENGINEERED FOR EXCELLENCE · KL UNIVERSITY CSE
+      ROYAL OBSIDIAN GOLD EDITION · ENGINEERED FOR EXCELLENCE · KL UNIVERSITY CSE
     </text>
   </g>
 </svg>
