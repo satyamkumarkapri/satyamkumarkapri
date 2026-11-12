@@ -12,23 +12,23 @@
 
   <!-- Quick Access Navigation Strip -->
   <a href="https://satyamkapriportfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=090909&labelColor=171717" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F2C879&labelColor=171717" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=090909&labelColor=171717" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F2C879&labelColor=171717" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://codechef.com/users/kl_2500031975" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-4★%20(2128%20Peak)-C5A059?style=for-the-badge&logo=codechef&logoColor=090909&labelColor=171717" alt="CodeChef" />
+    <img src="https://img.shields.io/badge/CodeChef-4%E2%98%85%20(2128%20Peak)-C5A059?style=for-the-badge&logo=codechef&logoColor=F2C879&labelColor=171717" alt="CodeChef" />
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/satyamkapri17/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-1780%20(Top%209.3%25)-C5A059?style=for-the-badge&logo=leetcode&logoColor=090909&labelColor=171717" alt="LeetCode" />
+    <img src="https://img.shields.io/badge/LeetCode-1780%20(Top%209.3%25)-C5A059?style=for-the-badge&logo=leetcode&logoColor=F2C879&labelColor=171717" alt="LeetCode" />
   </a>
   &nbsp;
   <a href="mailto:satyamkumarkapri17@gmail.com">
-    <img src="https://img.shields.io/badge/Contact-Get%20In%20Touch-C5A059?style=for-the-badge&logo=gmail&logoColor=090909&labelColor=171717" alt="Email" />
+    <img src="https://img.shields.io/badge/Contact-Get%20In%20Touch-C5A059?style=for-the-badge&logo=gmail&logoColor=F2C879&labelColor=171717" alt="Email" />
   </a>
 
   <br/><br/>
@@ -307,11 +307,11 @@ Dynamic GitHub analytics sourced directly from active contributions:
 
   <br/><br/>
 
-  <!-- Contribution Grid Snake Animation -->
+  <!-- Date-Wise Contribution Grid & Snake Animation -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/github-contribution-grid-snake.svg">
-    <img src="assets/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake Animation" width="95%" />
+    <img src="assets/github-contribution-grid-snake-dark.svg" alt="Date-Wise GitHub Contribution Matrix &amp; Snake Animation" width="100%" />
   </picture>
 
 </div>
@@ -401,33 +401,33 @@ Strategic engineering roadmap guiding development focus and technical initiative
 <div align="center">
 
   <a href="https://satyamkapriportfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=090909&labelColor=171717" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-satyamkapriportfolio.vercel.app-C5A059?style=for-the-badge&logo=googlechrome&logoColor=F2C879&labelColor=171717" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://github.com/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-satyamkumarkapri-C5A059?style=for-the-badge&logo=github&logoColor=090909&labelColor=171717" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-satyamkumarkapri-C5A059?style=for-the-badge&logo=github&logoColor=F2C879&labelColor=171717" alt="GitHub" />
   </a>
   &nbsp;
   <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=090909&labelColor=171717" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-satyamkumarkapri-C5A059?style=for-the-badge&logo=linkedin&logoColor=F2C879&labelColor=171717" alt="LinkedIn" />
   </a>
 
   <br/><br/>
 
   <a href="https://codechef.com/users/kl_2500031975" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-kl__2500031975-C5A059?style=for-the-badge&logo=codechef&logoColor=090909&labelColor=171717" alt="CodeChef" />
+    <img src="https://img.shields.io/badge/CodeChef-kl__2500031975-C5A059?style=for-the-badge&logo=codechef&logoColor=F2C879&labelColor=171717" alt="CodeChef" />
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/satyamkapri17/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-satyamkapri17-C5A059?style=for-the-badge&logo=leetcode&logoColor=090909&labelColor=171717" alt="LeetCode" />
+    <img src="https://img.shields.io/badge/LeetCode-satyamkapri17-C5A059?style=for-the-badge&logo=leetcode&logoColor=F2C879&labelColor=171717" alt="LeetCode" />
   </a>
   &nbsp;
   <a href="mailto:satyamkumarkapri17@gmail.com">
-    <img src="https://img.shields.io/badge/Email-satyamkumarkapri17@gmail.com-C5A059?style=for-the-badge&logo=gmail&logoColor=090909&labelColor=171717" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-satyamkumarkapri17@gmail.com-C5A059?style=for-the-badge&logo=gmail&logoColor=F2C879&labelColor=171717" alt="Email" />
   </a>
   &nbsp;
   <a href="https://www.instagram.com/btw_its._satyam/" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-btw__its.__satyam-C5A059?style=for-the-badge&logo=instagram&logoColor=090909&labelColor=171717" alt="Instagram" />
+    <img src="https://img.shields.io/badge/Instagram-btw__its.__satyam-C5A059?style=for-the-badge&logo=instagram&logoColor=F2C879&labelColor=171717" alt="Instagram" />
   </a>
 
 </div>

@@ -631,64 +631,137 @@ def generate_profile_footer():
         f.write(svg)
     print("Generated:", path)
 
-def generate_snake_placeholder():
-    """Generates an obsidian-gold styled initial snake graphic so there's never a broken image."""
+def generate_datewise_contribution_graph():
+    """Generates an authentic date-wise contribution matrix with months, weekdays, legend and snake."""
+    import json
     path_dark = os.path.join(OUTPUT_DIR, "github-contribution-grid-snake-dark.svg")
     path_light = os.path.join(OUTPUT_DIR, "github-contribution-grid-snake.svg")
     
-    # 52 weeks x 7 days grid
-    cols = 52
-    rows = 7
-    cell_size = 11
-    cell_gap = 3
-    total_w = cols * (cell_size + cell_gap) + 20
-    total_h = rows * (cell_size + cell_gap) + 30
-    
-    colors = ["#171717", "#282012", "#4a3b1a", "#9B773B", "#C5A059"]
+    grid_json_path = os.path.join(os.path.dirname(__file__), "grid_data.json")
+    if os.path.exists(grid_json_path):
+        with open(grid_json_path, "r", encoding="utf-8") as f:
+            grid = json.load(f)
+    else:
+        grid = []
+
+    LEVEL_COLORS = {
+        0: ("#151515", "#221d14"),
+        1: ("#3d2f17", "#4d3b1e"),
+        2: ("#785e2b", "#8c6e33"),
+        3: ("#C5A059", "#d4ad63"),
+        4: ("#F2C879", "#ffe9a3")
+    }
+
+    MONTHS = [
+        (0, "Nov"), (4, "Dec"), (8, "Jan"), (12, "Feb"), (17, "Mar"), (21, "Apr"),
+        (26, "May"), (30, "Jun"), (35, "Jul"), (39, "Aug"), (44, "Sep"), (48, "Oct"), (52, "Nov")
+    ]
+
+    month_labels = []
+    for col, name in MONTHS:
+        x = 58 + col * 14
+        month_labels.append(f'<text x="{x}" y="52" class="axis-font" font-size="10" fill="#A6A29A" font-weight="600">{name}</text>')
+
+    WEEKDAYS = [(1, "Mon"), (3, "Wed"), (5, "Fri")]
+    day_labels = []
+    for row, name in WEEKDAYS:
+        y = 62 + row * 14 + 9
+        day_labels.append(f'<text x="24" y="{y}" class="axis-font" font-size="9.5" fill="#A6A29A">{name}</text>')
 
     cells_svg = []
-    import random
-    random.seed(42)
-    for c in range(cols):
-        for r in range(rows):
-            x = 10 + c * (cell_size + cell_gap)
-            y = 15 + r * (cell_size + cell_gap)
-            # pseudo distribution of contributions
-            weight = random.random()
-            if weight > 0.88:
-                fill = colors[4]
-            elif weight > 0.75:
-                fill = colors[3]
-            elif weight > 0.60:
-                fill = colors[2]
-            elif weight > 0.40:
-                fill = colors[1]
-            else:
-                fill = colors[0]
-            cells_svg.append(f'<rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="2" fill="{fill}" />')
+    for c in grid:
+        row = c['row']
+        col = c['col']
+        date_str = c['date']
+        level = c['level']
+        fill, stroke = LEVEL_COLORS.get(level, LEVEL_COLORS[0])
+        x = 58 + col * 14
+        y = 62 + row * 14
+        cells_svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" rx="2.2" fill="{fill}" stroke="{stroke}" stroke-width="0.6"><title>{date_str}: level {level}</title></rect>')
 
-    # Draw snake path
-    snake_head_x = 10 + 42 * (cell_size + cell_gap)
-    snake_head_y = 15 + 4 * (cell_size + cell_gap)
+    snake_head_x = 58 + 48 * 14
+    snake_head_y = 62 + 4 * 14
+
     snake_svg = f"""
-    <!-- Snake Body -->
-    <rect x="{snake_head_x - 30}" y="{snake_head_y}" width="{cell_size}" height="{cell_size}" rx="2" fill="#E7D5A5" />
-    <rect x="{snake_head_x - 16}" y="{snake_head_y}" width="{cell_size}" height="{cell_size}" rx="2" fill="#F2C879" />
-    <rect x="{snake_head_x}" y="{snake_head_y}" width="{cell_size}" height="{cell_size}" rx="2.5" fill="#F2C879" stroke="#FFE9A3" stroke-width="1.5"/>
-    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 4}" r="1.2" fill="#090909" />
-    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 8}" r="1.2" fill="#090909" />
-    """
+  <!-- Snake Animation Group -->
+  <g class="snake-group">
+    <rect x="{snake_head_x - 28}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#E7D5A5" opacity="0.8"/>
+    <rect x="{snake_head_x - 14}" y="{snake_head_y}" width="11" height="11" rx="2" fill="#F2C879" />
+    <rect x="{snake_head_x}" y="{snake_head_y}" width="11" height="11" rx="2.5" fill="#F2C879" stroke="#FFE9A3" stroke-width="1.2"/>
+    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 3.5}" r="1.2" fill="#090909" />
+    <circle cx="{snake_head_x + 8}" cy="{snake_head_y + 7.5}" r="1.2" fill="#090909" />
+  </g>
+"""
 
-    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total_w} {total_h}" width="100%" height="auto" style="background: transparent;">
-  <rect width="{total_w}" height="{total_h}" rx="8" fill="#090909" stroke="#3A3020" stroke-width="1"/>
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 205" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="grid-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#C5A059" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3A3020" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .title-font {{
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    }}
+    .axis-font {{
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }}
+    @keyframes snake-pulse {{
+      0%, 100% {{ filter: drop-shadow(0 0 2px #F2C879); }}
+      50% {{ filter: drop-shadow(0 0 6px #F2C879); }}
+    }}
+    .snake-group {{
+      animation: snake-pulse 3s infinite ease-in-out;
+    }}
+  </style>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="836" height="201" rx="10" fill="#090909" stroke="url(#grid-border)" stroke-width="1.2"/>
+
+  <!-- Top Title Bar -->
+  <text x="24" y="26" class="title-font" font-size="11" font-weight="700" fill="#E7D5A5" letter-spacing="1">
+    &#10022; 292 CONTRIBUTIONS IN THE LAST YEAR // 2025 &#8211; 2026 &#10022;
+  </text>
+  <text x="816" y="26" text-anchor="end" class="title-font" font-size="10.5" font-weight="600" fill="#C5A059" letter-spacing="0.8">
+    DATE-WISE CONTRIBUTION MATRIX
+  </text>
+  <line x1="24" y1="36" x2="816" y2="36" stroke="#3A3020" stroke-width="0.8"/>
+
+  <!-- Month Labels (X-Axis) -->
+  {''.join(month_labels)}
+
+  <!-- Day-of-Week Labels (Y-Axis) -->
+  {''.join(day_labels)}
+
+  <!-- Grid Cells -->
   {''.join(cells_svg)}
+
+  <!-- Snake Game Character -->
   {snake_svg}
+
+  <!-- Footer & Legend -->
+  <text x="58" y="185" class="title-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+    Nov 9, 2025 &#8212; Nov 12, 2026 &#8226; 52-Week Daily Timeline
+  </text>
+
+  <g transform="translate(680, 175)">
+    <text x="0" y="9" class="title-font" font-size="9" fill="#A6A29A">Less</text>
+    <rect x="28" y="0" width="10" height="10" rx="2" fill="#151515" stroke="#221d14" stroke-width="0.5"/>
+    <rect x="42" y="0" width="10" height="10" rx="2" fill="#3d2f17" stroke="#4d3b1e" stroke-width="0.5"/>
+    <rect x="56" y="0" width="10" height="10" rx="2" fill="#785e2b" stroke="#8c6e33" stroke-width="0.5"/>
+    <rect x="70" y="0" width="10" height="10" rx="2" fill="#C5A059" stroke="#d4ad63" stroke-width="0.5"/>
+    <rect x="84" y="0" width="10" height="10" rx="2" fill="#F2C879" stroke="#ffe9a3" stroke-width="0.5"/>
+    <text x="100" y="9" class="title-font" font-size="9" fill="#A6A29A">More</text>
+  </g>
 </svg>"""
 
     with open(path_dark, "w", encoding="utf-8") as f:
-        f.write(svg_content)
+        f.write(svg)
     with open(path_light, "w", encoding="utf-8") as f:
-        f.write(svg_content)
+        f.write(svg)
     print("Generated:", path_dark)
     print("Generated:", path_light)
 
@@ -699,5 +772,5 @@ if __name__ == "__main__":
     generate_gold_divider()
     generate_engineering_roadmap()
     generate_profile_footer()
-    generate_snake_placeholder()
+    generate_datewise_contribution_graph()
     print("All assets successfully generated!")
