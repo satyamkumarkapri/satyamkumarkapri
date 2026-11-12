@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 24" width="100%" height="24" style="background: transparent;">
+  <defs>
+    <linearGradient id="divider-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#090909" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#C5A059" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#F2C879" stop-opacity="1"/>
+      <stop offset="55%" stop-color="#C5A059" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#3A3020" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <line x1="40" y1="12" x2="960" y2="12" stroke="url(#divider-grad)" stroke-width="1.2"/>
+  <circle cx="500" cy="12" r="4" fill="#090909" stroke="#F2C879" stroke-width="1.5"/>
+  <circle cx="500" cy="12" r="1.5" fill="#E7D5A5"/>
+  <polygon points="460,12 466,9 472,12 466,15" fill="#C5A059" fill-opacity="0.5"/>
+  <polygon points="540,12 534,9 528,12 534,15" fill="#C5A059" fill-opacity="0.5"/>
+</svg>

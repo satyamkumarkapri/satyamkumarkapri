@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 130" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="footer-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121212"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+    <linearGradient id="gold-stroke-f" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#C5A059" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3A3020" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .footer-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Montserrat, sans-serif;
+      font-weight: 800;
+      letter-spacing: 4px;
+    }
+    .footer-quote {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-style: italic;
+    }
+    .footer-mono {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    }
+  </style>
+
+  <rect x="2" y="2" width="996" height="126" rx="10" fill="url(#footer-bg)" stroke="url(#gold-stroke-f)" stroke-width="1"/>
+
+  <!-- Symmetrical Gold Corner Accents -->
+  <path d="M 16 32 V 16 H 32" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-opacity="0.6"/>
+  <path d="M 984 32 V 16 H 968" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-opacity="0.6"/>
+  <path d="M 16 98 V 114 H 32" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-opacity="0.6"/>
+  <path d="M 984 98 V 114 H 968" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Center Signature Text -->
+  <g transform="translate(500, 38)">
+    <text text-anchor="middle" class="footer-title" font-size="18" fill="#E7D5A5">
+      SATYAM KUMAR KAPRI
+    </text>
+  </g>
+
+  <!-- Quote -->
+  <g transform="translate(500, 68)">
+    <text text-anchor="middle" class="footer-quote" font-size="13" fill="#C5A059">
+      &#8220;Think Algorithmically. Engineer Intelligently. Build Relentlessly.&#8221;
+    </text>
+  </g>
+
+  <!-- Subtitle Metadata -->
+  <g transform="translate(500, 98)">
+    <text text-anchor="middle" class="footer-mono" font-size="10.5" fill="#A6A29A" letter-spacing="1.5">
+      OBSIDIAN GOLD EDITION · ENGINEERED FOR EXCELLENCE · KL UNIVERSITY CSE
+    </text>
+  </g>
+</svg>

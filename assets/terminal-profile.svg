@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 380" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#3A3020" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#9B773B" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="term-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#1c1c1c"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .term-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Menlo, Monaco, monospace;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor {
+      animation: blink 1s infinite;
+      fill: #F2C879;
+    }
+  </style>
+
+  <!-- Terminal Window Body -->
+  <rect x="2" y="2" width="936" height="376" rx="10" fill="#0C0C0C" stroke="url(#term-border)" stroke-width="1.2"/>
+
+  <!-- Terminal Header Bar -->
+  <path d="M 2 12 Q 2 2 12 2 L 928 2 Q 938 2 938 12 L 938 38 L 2 38 Z" fill="url(#term-header)" stroke="#3A3020" stroke-width="0.8"/>
+  <line x1="2" y1="38" x2="938" y2="38" stroke="#3A3020" stroke-width="1"/>
+
+  <!-- Window Action Buttons (Luxury Obsidian Gold Theme) -->
+  <circle cx="24" cy="20" r="5.5" fill="#3A3020" stroke="#52432c" stroke-width="0.8"/>
+  <circle cx="44" cy="20" r="5.5" fill="#9B773B" stroke="#b88d46" stroke-width="0.8"/>
+  <circle cx="64" cy="20" r="5.5" fill="#C5A059" stroke="#e8c278" stroke-width="0.8"/>
+
+  <!-- Terminal Window Title -->
+  <text x="470" y="24" text-anchor="middle" class="term-font" font-size="11.5" font-weight="600" fill="#A6A29A" letter-spacing="1.2">
+    satyam@system-x: ~/engineering-identity (zsh)
+  </text>
+
+  <!-- Status Indicator (Right Header) -->
+  <g transform="translate(870, 20)">
+    <circle cx="-35" cy="0" r="3.5" fill="#C5A059"/>
+    <text x="-25" y="3.5" class="term-font" font-size="10" font-weight="600" fill="#C5A059" letter-spacing="1">
+      READY
+    </text>
+  </g>
+
+  <!-- Terminal Body Content -->
+  <g transform="translate(30, 48)" class="term-font">
+    <!-- Command 1: whoami -->
+    <text x="0" y="24" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">whoami</tspan>
+    </text>
+    <text x="20" y="46" font-size="13" fill="#E7D5A5" font-weight="600">
+      Satyam Kumar Kapri <tspan fill="#A6A29A" font-weight="400">· Computer Science Engineer &amp; AI Systems Developer</tspan>
+    </text>
+
+    <!-- Command 2: education -->
+    <text x="0" y="80" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">education</tspan>
+    </text>
+    <text x="20" y="102" font-size="13" fill="#F5F1E8">
+      B.Tech Computer Science and Engineering <tspan fill="#C5A059">|</tspan> <tspan fill="#E7D5A5">KL University</tspan> <tspan fill="#A6A29A">(CGPA: 9.12 / 10.0)</tspan>
+    </text>
+
+    <!-- Command 3: interests -->
+    <text x="0" y="136" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">interests</tspan>
+    </text>
+    <text x="20" y="158" font-size="13" fill="#E7D5A5">
+      Artificial Intelligence <tspan fill="#3A3020">•</tspan> Machine Learning <tspan fill="#3A3020">•</tspan> Full-Stack Architecture <tspan fill="#3A3020">•</tspan> DSA <tspan fill="#3A3020">•</tspan> System Design <tspan fill="#3A3020">•</tspan> Entrepreneurship
+    </text>
+
+    <!-- Command 4: philosophy -->
+    <text x="0" y="192" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">philosophy</tspan>
+    </text>
+    <text x="20" y="214" font-size="13" fill="#F2C879" font-weight="600">
+      &#8220;Think Algorithmically. Engineer Intelligently. Build Relentlessly.&#8221;
+    </text>
+
+    <!-- Command 5: current_status -->
+    <text x="0" y="248" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <tspan fill="#F5F1E8" font-weight="600">sys_status --active-work</tspan>
+    </text>
+    <text x="20" y="270" font-size="12.5" fill="#A6A29A">
+      [OK] Architecting intelligent software platforms, solving hard graph/DP algorithms, shipping production systems.
+    </text>
+
+    <!-- Command 6: prompt cursor -->
+    <text x="0" y="304" font-size="13">
+      <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E7D5A5">~</tspan><tspan fill="#F2C879" font-weight="700">$</tspan> <rect x="175" y="291" width="8" height="15" class="cursor"/>
+    </text>
+  </g>
+</svg>

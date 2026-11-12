@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1c160c" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#111111" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#090909" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9B773B"/>
+      <stop offset="35%" stop-color="#F2C879"/>
+      <stop offset="70%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#E7D5A5"/>
+    </linearGradient>
+
+    <linearGradient id="gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#3A3020" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E7D5A5" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f1a12"/>
+      <stop offset="50%" stop-color="#2a2215"/>
+      <stop offset="100%" stop-color="#1f1a12"/>
+    </linearGradient>
+
+    <!-- Technical Grid Pattern -->
+    <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C5A059" stroke-width="0.5" stroke-opacity="0.08"/>
+      <circle cx="0" cy="0" r="1" fill="#C5A059" fill-opacity="0.2"/>
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.55; }
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -100; }
+    }
+    .grid-bg { opacity: 0.85; }
+    .synapse {
+      stroke: #C5A059;
+      stroke-width: 1;
+      stroke-dasharray: 4, 8;
+      animation: dash 25s linear infinite;
+    }
+    .pulse-node {
+      animation: pulse-slow 4s ease-in-out infinite;
+    }
+    .text-mono {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Menlo, monospace;
+    }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="400" rx="16" fill="url(#bg-glow)" stroke="url(#gold-stroke)" stroke-width="1.5"/>
+
+  <!-- Background Technical Grid -->
+  <rect x="2" y="2" width="1196" height="396" rx="14" fill="url(#tech-grid)" class="grid-bg"/>
+
+  <!-- Abstract Neural & Circuit Structures (Left) -->
+  <g opacity="0.65">
+    <path d="M 60 120 L 150 70 L 240 110 L 200 220 L 110 240 Z" fill="none" stroke="#C5A059" stroke-opacity="0.15" stroke-width="1"/>
+    <line x1="60" y1="120" x2="150" y2="70" class="synapse" stroke-opacity="0.3"/>
+    <line x1="150" y1="70" x2="240" y2="110" class="synapse" stroke-opacity="0.3"/>
+    <line x1="240" y1="110" x2="200" y2="220" class="synapse" stroke-opacity="0.3"/>
+    <line x1="200" y1="220" x2="110" y2="240" class="synapse" stroke-opacity="0.3"/>
+    <line x1="110" y1="240" x2="60" y2="120" class="synapse" stroke-opacity="0.3"/>
+    
+    <!-- Left Circuit Lines -->
+    <path d="M 30 200 H 90 L 120 230 H 180" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1.2"/>
+    <path d="M 80 50 V 90 L 120 130 V 170" fill="none" stroke="#C5A059" stroke-opacity="0.2" stroke-width="1"/>
+
+    <!-- Nodes with glowing halos -->
+    <circle cx="150" cy="70" r="4" fill="#F2C879"/>
+    <circle cx="150" cy="70" r="10" fill="#F2C879" fill-opacity="0.15" class="pulse-node"/>
+    <circle cx="240" cy="110" r="3.5" fill="#C5A059"/>
+    <circle cx="200" cy="220" r="4" fill="#F2C879"/>
+    <circle cx="110" cy="240" r="3" fill="#9B773B"/>
+    <circle cx="60" cy="120" r="3.5" fill="#C5A059"/>
+    <circle cx="180" cy="230" r="2.5" fill="#E7D5A5"/>
+  </g>
+
+  <!-- Abstract Neural & Circuit Structures (Right) -->
+  <g opacity="0.65">
+    <path d="M 1140 120 L 1050 70 L 960 110 L 1000 220 L 1090 240 Z" fill="none" stroke="#C5A059" stroke-opacity="0.15" stroke-width="1"/>
+    <line x1="1140" y1="120" x2="1050" y2="70" class="synapse" stroke-opacity="0.3"/>
+    <line x1="1050" y1="70" x2="960" y2="110" class="synapse" stroke-opacity="0.3"/>
+    <line x1="960" y1="110" x2="1000" y2="220" class="synapse" stroke-opacity="0.3"/>
+    <line x1="1000" y1="220" x2="1090" y2="240" class="synapse" stroke-opacity="0.3"/>
+    <line x1="1090" y1="240" x2="1140" y2="120" class="synapse" stroke-opacity="0.3"/>
+    
+    <!-- Right Circuit Lines -->
+    <path d="M 1170 200 H 1110 L 1080 230 H 1020" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1.2"/>
+    <path d="M 1120 50 V 90 L 1080 130 V 170" fill="none" stroke="#C5A059" stroke-opacity="0.2" stroke-width="1"/>
+
+    <!-- Nodes -->
+    <circle cx="1050" cy="70" r="4" fill="#F2C879"/>
+    <circle cx="1050" cy="70" r="10" fill="#F2C879" fill-opacity="0.15" class="pulse-node"/>
+    <circle cx="960" cy="110" r="3.5" fill="#C5A059"/>
+    <circle cx="1000" cy="220" r="4" fill="#F2C879"/>
+    <circle cx="1090" cy="240" r="3" fill="#9B773B"/>
+    <circle cx="1140" cy="120" r="3.5" fill="#C5A059"/>
+    <circle cx="1020" cy="230" r="2.5" fill="#E7D5A5"/>
+  </g>
+
+  <!-- Precision Corner Geometric Brackets -->
+  <path d="M 24 44 V 24 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M 1176 44 V 24 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M 24 356 V 376 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M 1176 356 V 376 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+
+  <!-- Center Decorative Light Flare -->
+  <ellipse cx="600" cy="170" rx="280" ry="70" fill="#C5A059" fill-opacity="0.06" filter="url(#subtle-glow)"/>
+
+  <!-- Top Obsidian Gold Badge -->
+  <g transform="translate(600, 52)">
+    <rect x="-225" y="-14" width="450" height="28" rx="14" fill="url(#badge-grad)" stroke="#3A3020" stroke-width="1"/>
+    <circle cx="-198" cy="0" r="3.5" fill="#F2C879"/>
+    <circle cx="-198" cy="0" r="7" fill="#F2C879" fill-opacity="0.2" class="pulse-node"/>
+    <text x="-182" y="4" class="code-font" font-size="10.5" font-weight="600" fill="#E7D5A5" letter-spacing="2.5">
+      ✦ OBSIDIAN GOLD // VERIFIED SYSTEM ARCHITECT ✦
+    </text>
+    <circle cx="198" cy="0" r="3.5" fill="#F2C879"/>
+  </g>
+
+  <!-- Main Identity Heading -->
+  <g transform="translate(600, 145)">
+    <text text-anchor="middle" class="text-mono" font-size="52" font-weight="900" fill="url(#gold-grad)" letter-spacing="7" filter="url(#subtle-glow)">
+      SATYAM KUMAR KAPRI
+    </text>
+  </g>
+
+  <!-- Subtitle / Role Architecture -->
+  <g transform="translate(600, 192)">
+    <text text-anchor="middle" class="text-mono" font-size="14.5" font-weight="700" fill="#E7D5A5" letter-spacing="4.5">
+      AI / ML ENGINEER  •  FULL-STACK ARCHITECT  •  COMPETITIVE PROGRAMMER
+    </text>
+  </g>
+
+  <!-- Dynamic Engineering Philosophy Tagline -->
+  <g transform="translate(600, 230)">
+    <text text-anchor="middle" class="text-mono" font-size="16" font-style="italic" font-weight="400" fill="#C5A059" letter-spacing="1">
+      &#8220;Engineering Intelligence. Building What&apos;s Next.&#8221;
+    </text>
+  </g>
+
+  <!-- Center Thin Gold Rule -->
+  <line x1="420" y1="260" x2="780" y2="260" stroke="#3A3020" stroke-width="1"/>
+  <circle cx="600" cy="260" r="3" fill="#C5A059"/>
+  <line x1="560" y1="260" x2="640" y2="260" stroke="#C5A059" stroke-width="1.5"/>
+
+  <!-- Bottom Real-World Engineering Highlights Strip -->
+  <g transform="translate(600, 318)">
+    <rect x="-440" y="-22" width="880" height="44" rx="8" fill="#141414" stroke="#3A3020" stroke-width="1"/>
+    
+    <!-- Item 1: Education -->
+    <text x="-415" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+      KL UNIVERSITY
+    </text>
+    <text x="-312" y="5" class="code-font" font-size="11" fill="#A6A29A">
+      B.Tech CSE (9.12 CGPA)
+    </text>
+    
+    <line x1="-155" y1="-10" x2="-155" y2="10" stroke="#3A3020" stroke-width="1"/>
+
+    <!-- Item 2: CodeChef -->
+    <text x="-135" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F2C879" letter-spacing="0.5">
+      CODECHEF 4★
+    </text>
+    <text x="-32" y="5" class="code-font" font-size="11" fill="#A6A29A">
+      2128 Peak (Div 2)
+    </text>
+
+    <line x1="100" y1="-10" x2="100" y2="10" stroke="#3A3020" stroke-width="1"/>
+
+    <!-- Item 3: LeetCode -->
+    <text x="120" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+      LEETCODE
+    </text>
+    <text x="198" y="5" class="code-font" font-size="11" fill="#A6A29A">
+      Top 9.35% (1780)
+    </text>
+
+    <line x1="315" y1="-10" x2="315" y2="10" stroke="#3A3020" stroke-width="1"/>
+
+    <!-- Item 4: Solved -->
+    <text x="335" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F2C879" letter-spacing="0.5">
+      640+
+    </text>
+    <text x="375" y="5" class="code-font" font-size="11" fill="#A6A29A">
+      Solved
+    </text>
+  </g>
+</svg>

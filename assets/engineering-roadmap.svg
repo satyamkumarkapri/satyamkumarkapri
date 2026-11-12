@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 240" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="card-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#0E0E0E"/>
+    </linearGradient>
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#3A3020"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .road-head {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+      font-weight: 800;
+    }
+    .road-body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .road-num {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-weight: 700;
+    }
+  </style>
+
+  <!-- Background Base Container -->
+  <rect x="2" y="2" width="936" height="236" rx="12" fill="#0A0A0A" stroke="#3A3020" stroke-width="1"/>
+
+  <!-- Connecting Backbone Rail -->
+  <line x1="80" y1="46" x2="860" y2="46" stroke="url(#line-grad)" stroke-width="1.8"/>
+
+  <!-- Node 01: Artificial Intelligence -->
+  <g transform="translate(18, 20)">
+    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">01</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">ARTIFICIAL INTEL.</text>
+    <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Building intelligent systems,</text>
+    <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">applied ML pipelines, and</text>
+    <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">modern AI architectures.</text>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">ML · DEEP LEARNING</text>
+  </g>
+
+  <!-- Node 02: Software Engineering -->
+  <g transform="translate(202, 20)">
+    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">02</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">SOFTWARE ENG.</text>
+    <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Designing robust, modular,</text>
+    <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">and scalable enterprise</text>
+    <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">full-stack web apps.</text>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">JAVA · REACT · APIS</text>
+  </g>
+
+  <!-- Node 03: Competitive Programming -->
+  <g transform="translate(386, 20)">
+    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">03</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">COMPETITIVE CODING</text>
+    <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Strengthening algorithmic</text>
+    <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">intuition: DP, graph theory,</text>
+    <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">trees &amp; time efficiency.</text>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">4★ CODECHEF · DSA</text>
+  </g>
+
+  <!-- Node 04: System Design -->
+  <g transform="translate(570, 20)">
+    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">04</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">SYSTEM DESIGN</text>
+    <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Scalable architectures,</text>
+    <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">distributed caching, fault</text>
+    <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">tolerance &amp; concurrency.</text>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">DISTRIBUTED SYS</text>
+  </g>
+
+  <!-- Node 05: Entrepreneurship -->
+  <g transform="translate(754, 20)">
+    <circle cx="75" cy="26" r="14" fill="#1A150D" stroke="#C5A059" stroke-width="1.5"/>
+    <text x="75" y="30.5" text-anchor="middle" class="road-num" font-size="11" fill="#F2C879">05</text>
+    <rect x="0" y="58" width="168" height="142" rx="8" fill="url(#card-surface)" stroke="#3A3020" stroke-width="1"/>
+    <text x="12" y="82" class="road-head" font-size="11" fill="#E7D5A5" letter-spacing="0.5">ENTREPRENEURSHIP</text>
+    <text x="12" y="104" class="road-body" font-size="10" fill="#A6A29A">Bridging technical rigor</text>
+    <text x="12" y="120" class="road-body" font-size="10" fill="#A6A29A">with business strategy to</text>
+    <text x="12" y="136" class="road-body" font-size="10" fill="#A6A29A">build viable products.</text>
+    <rect x="12" y="160" width="144" height="20" rx="4" fill="#201C14"/>
+    <text x="84" y="174" text-anchor="middle" class="road-num" font-size="9" fill="#C5A059">VENTURES &amp; SCALE</text>
+  </g>
+</svg>

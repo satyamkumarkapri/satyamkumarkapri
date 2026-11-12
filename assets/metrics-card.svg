@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 135" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181818"/>
+      <stop offset="100%" stop-color="#101010"/>
+    </linearGradient>
+    <linearGradient id="gold-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2C879"/>
+      <stop offset="50%" stop-color="#E7D5A5"/>
+      <stop offset="100%" stop-color="#C5A059"/>
+    </linearGradient>
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="50%" stop-color="#785e2e"/>
+      <stop offset="100%" stop-color="#3A3020"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .stat-font {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+    }
+  </style>
+
+  <!-- Metric 1: Peak CodeChef Rating -->
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#card-grad)" stroke="url(#card-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
+      2128
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+      PEAK CODECHEF
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Division 2 · Global #3,556
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 2: 4-Star Status -->
+  <g transform="translate(240, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#card-grad)" stroke="url(#card-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="32" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
+      FOUR STAR
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+      CODECHEF STATUS
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Top Algorithmic Tier
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 3: DSA Rating -->
+  <g transform="translate(480, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#card-grad)" stroke="url(#card-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
+      1904
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+      DSA PEAK RATING
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Ranked #445 Global · #422 India
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 4: Problems Solved -->
+  <g transform="translate(720, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#card-grad)" stroke="url(#card-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#gold-text-grad)" letter-spacing="1">
+      640+
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E7D5A5" letter-spacing="1.5">
+      PROBLEMS SOLVED
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Gold Badge Problem Solver
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+</svg>
