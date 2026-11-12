@@ -24,12 +24,31 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def generate_hero_banner():
     path = os.path.join(OUTPUT_DIR, "hero-banner.svg")
-    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="auto" style="background: transparent;">
+    
+    # Load and optimize hero.png
+    b64_photo = ""
+    hero_path = os.path.join(os.path.dirname(__file__), "..", "hero.png")
+    if not os.path.exists(hero_path):
+        hero_path = os.path.join(OUTPUT_DIR, "hero.png")
+    
+    if os.path.exists(hero_path):
+        import base64, io
+        from PIL import Image
+        im = Image.open(hero_path)
+        w, h = im.size
+        target_w = 460
+        target_h = int(h * target_w / w)
+        resized = im.resize((target_w, target_h), Image.Resampling.LANCZOS)
+        buf = io.BytesIO()
+        resized.save(buf, format='PNG', optimize=True)
+        b64_photo = base64.b64encode(buf.getvalue()).decode('utf-8')
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 420" width="100%" height="auto" style="background: transparent;">
   <defs>
     <!-- Background Gradient -->
-    <radialGradient id="bg-glow" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#1c160c" stop-opacity="0.8"/>
-      <stop offset="45%" stop-color="#111111" stop-opacity="0.95"/>
+    <radialGradient id="bg-glow" cx="40%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#1c160c" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#111111" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="#090909" stop-opacity="1"/>
     </radialGradient>
 
@@ -47,6 +66,12 @@ def generate_hero_banner():
       <stop offset="100%" stop-color="#E7D5A5" stop-opacity="0.7"/>
     </linearGradient>
 
+    <linearGradient id="frame-gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2C879" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#785E2B" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.9"/>
+    </linearGradient>
+
     <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#1f1a12"/>
       <stop offset="50%" stop-color="#2a2215"/>
@@ -55,181 +80,195 @@ def generate_hero_banner():
 
     <!-- Technical Grid Pattern -->
     <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C5A059" stroke-width="0.5" stroke-opacity="0.08"/>
-      <circle cx="0" cy="0" r="1" fill="#C5A059" fill-opacity="0.2"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C5A059" stroke-width="0.5" stroke-opacity="0.07"/>
+      <circle cx="0" cy="0" r="1" fill="#C5A059" fill-opacity="0.18"/>
     </pattern>
 
-    <!-- Glow Filter -->
+    <!-- Subtle Glow Filter -->
     <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
+
+    <!-- Portrait Clip Path -->
+    <clipPath id="portrait-clip">
+      <rect x="882" y="38" width="246" height="280" rx="16"/>
+    </clipPath>
   </defs>
 
   <style>
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.55; }
-    }
-    @keyframes dash {
-      to { stroke-dashoffset: -100; }
-    }
-    .grid-bg { opacity: 0.85; }
-    .synapse {
+    @keyframes pulse-slow {{
+      0%, 100% {{ opacity: 0.25; }}
+      50% {{ opacity: 0.65; }}
+    }}
+    @keyframes dash {{
+      to {{ stroke-dashoffset: -100; }}
+    }}
+    .grid-bg {{ opacity: 0.85; }}
+    .synapse {{
       stroke: #C5A059;
       stroke-width: 1;
       stroke-dasharray: 4, 8;
       animation: dash 25s linear infinite;
-    }
-    .pulse-node {
+    }}
+    .pulse-node {{
       animation: pulse-slow 4s ease-in-out infinite;
-    }
-    .text-mono {
+    }}
+    .text-mono {{
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    }
-    .code-font {
+    }}
+    .code-font {{
       font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Menlo, monospace;
-    }
+    }}
   </style>
 
   <!-- Base Canvas -->
-  <rect width="1200" height="400" rx="16" fill="url(#bg-glow)" stroke="url(#gold-stroke)" stroke-width="1.5"/>
+  <rect width="1200" height="420" rx="16" fill="url(#bg-glow)" stroke="url(#gold-stroke)" stroke-width="1.5"/>
 
   <!-- Background Technical Grid -->
-  <rect x="2" y="2" width="1196" height="396" rx="14" fill="url(#tech-grid)" class="grid-bg"/>
+  <rect x="2" y="2" width="1196" height="416" rx="14" fill="url(#tech-grid)" class="grid-bg"/>
 
-  <!-- Abstract Neural & Circuit Structures (Left) -->
-  <g opacity="0.65">
-    <path d="M 60 120 L 150 70 L 240 110 L 200 220 L 110 240 Z" fill="none" stroke="#C5A059" stroke-opacity="0.15" stroke-width="1"/>
-    <line x1="60" y1="120" x2="150" y2="70" class="synapse" stroke-opacity="0.3"/>
-    <line x1="150" y1="70" x2="240" y2="110" class="synapse" stroke-opacity="0.3"/>
-    <line x1="240" y1="110" x2="200" y2="220" class="synapse" stroke-opacity="0.3"/>
-    <line x1="200" y1="220" x2="110" y2="240" class="synapse" stroke-opacity="0.3"/>
-    <line x1="110" y1="240" x2="60" y2="120" class="synapse" stroke-opacity="0.3"/>
-    
-    <!-- Left Circuit Lines -->
-    <path d="M 30 200 H 90 L 120 230 H 180" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1.2"/>
-    <path d="M 80 50 V 90 L 120 130 V 170" fill="none" stroke="#C5A059" stroke-opacity="0.2" stroke-width="1"/>
-
-    <!-- Nodes with glowing halos -->
-    <circle cx="150" cy="70" r="4" fill="#F2C879"/>
-    <circle cx="150" cy="70" r="10" fill="#F2C879" fill-opacity="0.15" class="pulse-node"/>
-    <circle cx="240" cy="110" r="3.5" fill="#C5A059"/>
-    <circle cx="200" cy="220" r="4" fill="#F2C879"/>
-    <circle cx="110" cy="240" r="3" fill="#9B773B"/>
-    <circle cx="60" cy="120" r="3.5" fill="#C5A059"/>
-    <circle cx="180" cy="230" r="2.5" fill="#E7D5A5"/>
+  <!-- Left Abstract Circuit Overlay -->
+  <g opacity="0.45">
+    <path d="M 30 180 H 80 L 110 210 H 160" fill="none" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1.2"/>
+    <path d="M 60 40 V 80 L 90 110 V 150" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1"/>
+    <circle cx="160" cy="210" r="3" fill="#F2C879"/>
+    <circle cx="60" cy="40" r="2.5" fill="#C5A059"/>
+    <line x1="80" y1="180" x2="140" y2="120" class="synapse" stroke-opacity="0.25"/>
+    <circle cx="140" cy="120" r="3" fill="#E7D5A5"/>
   </g>
 
-  <!-- Abstract Neural & Circuit Structures (Right) -->
-  <g opacity="0.65">
-    <path d="M 1140 120 L 1050 70 L 960 110 L 1000 220 L 1090 240 Z" fill="none" stroke="#C5A059" stroke-opacity="0.15" stroke-width="1"/>
-    <line x1="1140" y1="120" x2="1050" y2="70" class="synapse" stroke-opacity="0.3"/>
-    <line x1="1050" y1="70" x2="960" y2="110" class="synapse" stroke-opacity="0.3"/>
-    <line x1="960" y1="110" x2="1000" y2="220" class="synapse" stroke-opacity="0.3"/>
-    <line x1="1000" y1="220" x2="1090" y2="240" class="synapse" stroke-opacity="0.3"/>
-    <line x1="1090" y1="240" x2="1140" y2="120" class="synapse" stroke-opacity="0.3"/>
-    
-    <!-- Right Circuit Lines -->
-    <path d="M 1170 200 H 1110 L 1080 230 H 1020" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1.2"/>
-    <path d="M 1120 50 V 90 L 1080 130 V 170" fill="none" stroke="#C5A059" stroke-opacity="0.2" stroke-width="1"/>
-
-    <!-- Nodes -->
-    <circle cx="1050" cy="70" r="4" fill="#F2C879"/>
-    <circle cx="1050" cy="70" r="10" fill="#F2C879" fill-opacity="0.15" class="pulse-node"/>
-    <circle cx="960" cy="110" r="3.5" fill="#C5A059"/>
-    <circle cx="1000" cy="220" r="4" fill="#F2C879"/>
-    <circle cx="1090" cy="240" r="3" fill="#9B773B"/>
-    <circle cx="1140" cy="120" r="3.5" fill="#C5A059"/>
-    <circle cx="1020" cy="230" r="2.5" fill="#E7D5A5"/>
-  </g>
+  <!-- Center Decorative Glow -->
+  <ellipse cx="450" cy="170" rx="260" ry="80" fill="#C5A059" fill-opacity="0.05" filter="url(#subtle-glow)"/>
 
   <!-- Precision Corner Geometric Brackets -->
   <path d="M 24 44 V 24 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
   <path d="M 1176 44 V 24 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
-  <path d="M 24 356 V 376 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
-  <path d="M 1176 356 V 376 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M 24 376 V 396 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M 1176 376 V 396 H 1156" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
 
-  <!-- Center Decorative Light Flare -->
-  <ellipse cx="600" cy="170" rx="280" ry="70" fill="#C5A059" fill-opacity="0.06" filter="url(#subtle-glow)"/>
-
+  <!-- ==================== LEFT / CENTER IDENTITY ==================== -->
   <!-- Top Obsidian Gold Badge -->
-  <g transform="translate(600, 52)">
-    <rect x="-225" y="-14" width="450" height="28" rx="14" fill="url(#badge-grad)" stroke="#3A3020" stroke-width="1"/>
-    <circle cx="-198" cy="0" r="3.5" fill="#F2C879"/>
-    <circle cx="-198" cy="0" r="7" fill="#F2C879" fill-opacity="0.2" class="pulse-node"/>
-    <text x="-182" y="4" class="code-font" font-size="10.5" font-weight="600" fill="#E7D5A5" letter-spacing="2.5">
-      ✦ OBSIDIAN GOLD // VERIFIED SYSTEM ARCHITECT ✦
+  <g transform="translate(60, 48)">
+    <rect x="0" y="-13" width="410" height="26" rx="13" fill="url(#badge-grad)" stroke="#3A3020" stroke-width="1"/>
+    <circle cx="18" cy="0" r="3" fill="#F2C879"/>
+    <circle cx="18" cy="0" r="6" fill="#F2C879" fill-opacity="0.25" class="pulse-node"/>
+    <text x="32" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#E7D5A5" letter-spacing="2">
+      &#10022; OBSIDIAN GOLD // VERIFIED SYSTEM ARCHITECT &#10022;
     </text>
-    <circle cx="198" cy="0" r="3.5" fill="#F2C879"/>
   </g>
 
-  <!-- Main Identity Heading -->
-  <g transform="translate(600, 145)">
-    <text text-anchor="middle" class="text-mono" font-size="52" font-weight="900" fill="url(#gold-grad)" letter-spacing="7" filter="url(#subtle-glow)">
+  <!-- Main Name Heading -->
+  <g transform="translate(60, 134)">
+    <text class="text-mono" font-size="50" font-weight="900" fill="url(#gold-grad)" letter-spacing="5" filter="url(#subtle-glow)">
       SATYAM KUMAR KAPRI
     </text>
   </g>
 
-  <!-- Subtitle / Role Architecture -->
-  <g transform="translate(600, 192)">
-    <text text-anchor="middle" class="text-mono" font-size="14.5" font-weight="700" fill="#E7D5A5" letter-spacing="4.5">
-      AI / ML ENGINEER  •  FULL-STACK ARCHITECT  •  COMPETITIVE PROGRAMMER
+  <!-- Roles & Architecture Subtitle -->
+  <g transform="translate(60, 178)">
+    <text class="text-mono" font-size="14.5" font-weight="700" fill="#E7D5A5" letter-spacing="3.5">
+      AI / ML ENGINEER  &#8226;  FULL-STACK ARCHITECT  &#8226;  COMPETITIVE PROGRAMMER
     </text>
   </g>
 
-  <!-- Dynamic Engineering Philosophy Tagline -->
-  <g transform="translate(600, 230)">
-    <text text-anchor="middle" class="text-mono" font-size="16" font-style="italic" font-weight="400" fill="#C5A059" letter-spacing="1">
+  <!-- Tagline -->
+  <g transform="translate(60, 218)">
+    <text class="text-mono" font-size="16" font-style="italic" font-weight="400" fill="#C5A059" letter-spacing="1">
       &#8220;Engineering Intelligence. Building What&apos;s Next.&#8221;
     </text>
   </g>
 
-  <!-- Center Thin Gold Rule -->
-  <line x1="420" y1="260" x2="780" y2="260" stroke="#3A3020" stroke-width="1"/>
-  <circle cx="600" cy="260" r="3" fill="#C5A059"/>
-  <line x1="560" y1="260" x2="640" y2="260" stroke="#C5A059" stroke-width="1.5"/>
+  <!-- Architectural Focus Line -->
+  <g transform="translate(60, 256)">
+    <line x1="0" y1="0" x2="720" y2="0" stroke="#3A3020" stroke-width="1"/>
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#C5A059" stroke-width="1.5"/>
+    <circle cx="160" cy="0" r="2.5" fill="#F2C879"/>
+    <text x="180" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#A6A29A" letter-spacing="2">
+      SYSTEM DESIGN  &#8226;  APPLIED ML  &#8226;  ENTERPRISE SCALE
+    </text>
+  </g>
 
-  <!-- Bottom Real-World Engineering Highlights Strip -->
-  <g transform="translate(600, 318)">
-    <rect x="-440" y="-22" width="880" height="44" rx="8" fill="#141414" stroke="#3A3020" stroke-width="1"/>
-    
+  <!-- ==================== RIGHT PORTRAIT SECTION ==================== -->
+  <!-- Ambient Gold Glow Behind Portrait -->
+  <ellipse cx="1005" cy="178" rx="150" ry="160" fill="#C5A059" fill-opacity="0.12" filter="url(#subtle-glow)"/>
+
+  <!-- Portrait Frame Exterior Outer Ring -->
+  <rect x="878" y="34" width="254" height="288" rx="18" fill="#121212" stroke="url(#frame-gold-stroke)" stroke-width="1.8"/>
+
+  <!-- Portrait Frame Inner Inset -->
+  <rect x="882" y="38" width="246" height="280" rx="15" fill="#0C0C0C" stroke="#3A3020" stroke-width="1"/>
+
+  <!-- Fine Decorative Corner Accents on Portrait Frame -->
+  <path d="M 870 52 V 26 H 896" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 1140 52 V 26 H 1114" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 870 304 V 330 H 896" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
+  <path d="M 1140 304 V 330 H 1114" fill="none" stroke="#F2C879" stroke-width="1.8" stroke-opacity="0.9"/>
+
+  <!-- Circuit Trace Anchors into Portrait -->
+  <line x1="820" y1="178" x2="878" y2="178" stroke="#C5A059" stroke-opacity="0.5" stroke-width="1.2" stroke-dasharray="3, 3"/>
+  <circle cx="820" cy="178" r="3" fill="#F2C879"/>
+  <circle cx="878" cy="178" r="2.5" fill="#C5A059"/>
+
+  <!-- The Photograph (Preserving Aspect Ratio & Transparency) -->
+  <g clip-path="url(#portrait-clip)">
+    <!-- Dark Gradient Fill Behind Cutout for Contrast -->
+    <rect x="882" y="38" width="246" height="280" fill="#0F0F0F"/>
+    <ellipse cx="1005" cy="140" rx="90" ry="100" fill="#C5A059" fill-opacity="0.08"/>
+    <image x="885" y="40" width="240" height="278" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{b64_photo}" xlink:href="data:image/png;base64,{b64_photo}"/>
+  </g>
+
+  <!-- Frame Inner Bevel Highlight -->
+  <rect x="882" y="38" width="246" height="280" rx="16" fill="none" stroke="#E7D5A5" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Small Name Plate on Frame -->
+  <g transform="translate(1005, 318)">
+    <rect x="-85" y="-10" width="170" height="20" rx="10" fill="#18140D" stroke="#C5A059" stroke-width="1"/>
+    <text text-anchor="middle" y="3.5" class="code-font" font-size="9" font-weight="700" fill="#F2C879" letter-spacing="1.2">
+      SATYAM KUMAR KAPRI
+    </text>
+  </g>
+
+  <!-- ==================== BOTTOM HIGHLIGHTS STRIP ==================== -->
+  <g transform="translate(600, 375)">
+    <rect x="-550" y="-23" width="1100" height="46" rx="8" fill="#141414" stroke="#3A3020" stroke-width="1"/>
+
     <!-- Item 1: Education -->
-    <text x="-415" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+    <text x="-520" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
       KL UNIVERSITY
     </text>
-    <text x="-312" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="-412" y="5" class="code-font" font-size="11" fill="#A6A29A">
       B.Tech CSE (9.12 CGPA)
     </text>
-    
-    <line x1="-155" y1="-10" x2="-155" y2="10" stroke="#3A3020" stroke-width="1"/>
+
+    <line x1="-210" y1="-11" x2="-210" y2="11" stroke="#3A3020" stroke-width="1"/>
 
     <!-- Item 2: CodeChef -->
-    <text x="-135" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F2C879" letter-spacing="0.5">
-      CODECHEF 4★
+    <text x="-185" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F2C879" letter-spacing="0.5">
+      CODECHEF 4&#9733;
     </text>
-    <text x="-32" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="-77" y="5" class="code-font" font-size="11" fill="#A6A29A">
       2128 Peak (Div 2)
     </text>
 
-    <line x1="100" y1="-10" x2="100" y2="10" stroke="#3A3020" stroke-width="1"/>
+    <line x1="80" y1="-11" x2="80" y2="11" stroke="#3A3020" stroke-width="1"/>
 
     <!-- Item 3: LeetCode -->
-    <text x="120" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
+    <text x="105" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E7D5A5" letter-spacing="0.5">
       LEETCODE
     </text>
-    <text x="198" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="187" y="5" class="code-font" font-size="11" fill="#A6A29A">
       Top 9.35% (1780)
     </text>
 
-    <line x1="315" y1="-10" x2="315" y2="10" stroke="#3A3020" stroke-width="1"/>
+    <line x1="330" y1="-11" x2="330" y2="11" stroke="#3A3020" stroke-width="1"/>
 
     <!-- Item 4: Solved -->
-    <text x="335" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F2C879" letter-spacing="0.5">
+    <text x="355" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F2C879" letter-spacing="0.5">
       640+
     </text>
-    <text x="375" y="5" class="code-font" font-size="11" fill="#A6A29A">
-      Solved
+    <text x="400" y="5" class="code-font" font-size="11" fill="#A6A29A">
+      Problems Solved
     </text>
   </g>
 </svg>"""
