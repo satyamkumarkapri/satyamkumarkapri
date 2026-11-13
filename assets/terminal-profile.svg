@@ -65,7 +65,7 @@
       <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">education</tspan>
     </text>
     <text x="20" y="102" font-size="13" fill="#F5F0E6">
-      B.Tech Computer Science and Engineering <tspan fill="#C5A059">|</tspan> <tspan fill="#E8D5A5">KL University</tspan> <tspan fill="#A6A29A">(CGPA: 9.12 / 10.0)</tspan>
+      B.Tech Computer Science and Engineering (2nd Year) <tspan fill="#C5A059">|</tspan> <tspan fill="#E8D5A5">KL University</tspan> <tspan fill="#A6A29A">(CGPA: 9.12 / 10.0)</tspan>
     </text>
 
     <!-- Command 3: interests -->
@@ -73,7 +73,7 @@
       <tspan fill="#C5A059" font-weight="700">satyam@engineer</tspan><tspan fill="#A6A29A">:</tspan><tspan fill="#E8D5A5">~</tspan><tspan fill="#F0C978" font-weight="700">$</tspan> <tspan fill="#F5F0E6" font-weight="600">interests</tspan>
     </text>
     <text x="20" y="158" font-size="13" fill="#E8D5A5">
-      Artificial Intelligence <tspan fill="#493A23">•</tspan> Machine Learning <tspan fill="#493A23">•</tspan> Full-Stack Architecture <tspan fill="#493A23">•</tspan> DSA <tspan fill="#493A23">•</tspan> System Design <tspan fill="#493A23">•</tspan> Entrepreneurship
+      Artificial Intelligence <tspan fill="#493A23">•</tspan> Machine Learning <tspan fill="#493A23">•</tspan> Full-Stack Development <tspan fill="#493A23">•</tspan> DSA <tspan fill="#493A23">•</tspan> System Design <tspan fill="#493A23">•</tspan> Entrepreneurship
     </text>
 
     <!-- Command 4: philosophy -->

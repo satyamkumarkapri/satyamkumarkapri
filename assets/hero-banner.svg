@@ -45,6 +45,20 @@
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
 
+    <!-- Name Specialized Champagne & Antique Gold Gradient -->
+    <linearGradient id="name-gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8D5A5"/>
+      <stop offset="30%" stop-color="#F5F0E6"/>
+      <stop offset="70%" stop-color="#E8D5A5"/>
+      <stop offset="100%" stop-color="#C5A059"/>
+    </linearGradient>
+
+    <!-- Subtle Antique Gold Text Glow (Delicate, Non-intrusive) -->
+    <filter id="subtle-name-glow" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.77  0 0 0 0 0.63  0 0 0 0 0.35  0 0 0 0 0.4 0"/>
+    </filter>
+
     <!-- Portrait Clip Path -->
     <clipPath id="portrait-clip">
       <rect x="882" y="38" width="246" height="280" rx="16"/>
@@ -72,6 +86,15 @@
     .text-mono {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     }
+    .name-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', 'Arial', sans-serif;
+      text-rendering: geometricPrecision;
+      shape-rendering: geometricPrecision;
+    }
+    .subtitle-font {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      text-rendering: geometricPrecision;
+    }
     .code-font {
       font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Menlo, monospace;
     }
@@ -83,18 +106,16 @@
   <!-- Background Technical Grid -->
   <rect x="2" y="2" width="1196" height="416" rx="14" fill="url(#tech-grid)" class="grid-bg"/>
 
-  <!-- Left Abstract Circuit Overlay -->
-  <g opacity="0.45">
-    <path d="M 30 180 H 80 L 110 210 H 160" fill="none" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1.2"/>
-    <path d="M 60 40 V 80 L 90 110 V 150" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1"/>
-    <circle cx="160" cy="210" r="3" fill="#F0C978"/>
-    <circle cx="60" cy="40" r="2.5" fill="#C5A059"/>
-    <line x1="80" y1="180" x2="140" y2="120" class="synapse" stroke-opacity="0.25"/>
-    <circle cx="140" cy="120" r="3" fill="#E8D5A5"/>
+  <!-- Left Margin Circuit Accent (Outside text zone, zero interference) -->
+  <g opacity="0.4">
+    <path d="M 32 80 V 160 L 42 175 V 250" fill="none" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1.2"/>
+    <circle cx="32" cy="80" r="2" fill="#C5A059"/>
+    <circle cx="42" cy="175" r="2.5" fill="#F0C978"/>
+    <circle cx="42" cy="250" r="2" fill="#E8D5A5"/>
   </g>
 
   <!-- Center Decorative Glow -->
-  <ellipse cx="450" cy="170" rx="260" ry="80" fill="#C5A059" fill-opacity="0.05" filter="url(#subtle-glow)"/>
+  <ellipse cx="450" cy="180" rx="260" ry="80" fill="#C5A059" fill-opacity="0.04" filter="url(#subtle-glow)"/>
 
   <!-- Precision Corner Geometric Brackets -->
   <path d="M 24 44 V 24 H 44" fill="none" stroke="#C5A059" stroke-width="2" stroke-opacity="0.8"/>
@@ -109,21 +130,26 @@
     <circle cx="18" cy="0" r="3" fill="#F0C978"/>
     <circle cx="18" cy="0" r="6" fill="#F0C978" fill-opacity="0.25" class="pulse-node"/>
     <text x="32" y="3.5" class="code-font" font-size="10.5" font-weight="600" fill="#E8D5A5" letter-spacing="2">
-      &#10022; ROYAL OBSIDIAN GOLD // VERIFIED ARCHITECT &#10022;
+      &#10022; ROYAL OBSIDIAN GOLD // VERIFIED DEVELOPER &#10022;
     </text>
   </g>
 
-  <!-- Main Name Heading in Champagne Gold Focus -->
+  <!-- Main Name Heading in Crisp Champagne Gold with Subtle Antique Gold Glow -->
   <g transform="translate(60, 134)">
-    <text class="text-mono" font-size="50" font-weight="900" fill="url(#gold-grad)" letter-spacing="5" filter="url(#subtle-glow)">
+    <!-- Subtle Antique Gold Glow Behind (Soft, Non-blurry, Reduced) -->
+    <text class="name-title" font-size="48" font-weight="900" fill="#C5A059" letter-spacing="4" filter="url(#subtle-name-glow)">
+      SATYAM KUMAR KAPRI
+    </text>
+    <!-- Extremely Sharp Foreground Text (Direct Vector, Champagne Gold) -->
+    <text class="name-title" font-size="48" font-weight="900" fill="url(#name-gold-grad)" letter-spacing="4">
       SATYAM KUMAR KAPRI
     </text>
   </g>
 
   <!-- Roles & Architecture Subtitle -->
   <g transform="translate(60, 178)">
-    <text class="text-mono" font-size="14.5" font-weight="700" fill="#E8D5A5" letter-spacing="3.5">
-      AI / ML ENGINEER  &#8226;  FULL-STACK ARCHITECT  &#8226;  COMPETITIVE PROGRAMMER
+    <text class="subtitle-font" font-size="14" font-weight="700" fill="#E8D5A5" letter-spacing="3.2">
+      AI / ML ENGINEER  &#8226;  FULL-STACK DEVELOPER  &#8226;  COMPETITIVE PROGRAMMER
     </text>
   </g>
 
@@ -188,41 +214,42 @@
   <g transform="translate(600, 375)">
     <rect x="-550" y="-23" width="1100" height="46" rx="8" fill="#15191F" stroke="#493A23" stroke-width="1"/>
 
-    <!-- Item 1: Education -->
-    <text x="-520" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E8D5A5" letter-spacing="0.5">
-      KL UNIVERSITY
-    </text>
-    <text x="-412" y="5" class="code-font" font-size="11" fill="#A6A29A">
-      B.Tech CSE (9.12 CGPA)
+    <!-- Item 1: Education (2nd Year B.Tech CSE) -->
+    <text x="-525" y="5" class="code-font" font-size="11" letter-spacing="0.3">
+      <tspan font-weight="700" fill="#E8D5A5">KL UNIVERSITY</tspan>
+      <tspan fill="#493A23"> | </tspan>
+      <tspan font-weight="600" fill="#F5F0E6">2ND YEAR B.TECH CSE</tspan>
+      <tspan fill="#493A23"> | </tspan>
+      <tspan font-weight="700" fill="#F0C978">9.12 CGPA</tspan>
     </text>
 
-    <line x1="-210" y1="-11" x2="-210" y2="11" stroke="#493A23" stroke-width="1"/>
+    <line x1="-185" y1="-11" x2="-185" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 2: CodeChef -->
-    <text x="-185" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#F0C978" letter-spacing="0.5">
+    <text x="-162" y="5" class="code-font" font-size="11" font-weight="700" fill="#F0C978" letter-spacing="0.5">
       CODECHEF 4&#9733;
     </text>
-    <text x="-77" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="-57" y="5" class="code-font" font-size="11" fill="#A6A29A">
       2128 Peak (Div 2)
     </text>
 
-    <line x1="80" y1="-11" x2="80" y2="11" stroke="#493A23" stroke-width="1"/>
+    <line x1="65" y1="-11" x2="65" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 3: LeetCode -->
-    <text x="105" y="5" class="code-font" font-size="11.5" font-weight="600" fill="#E8D5A5" letter-spacing="0.5">
+    <text x="88" y="5" class="code-font" font-size="11" font-weight="700" fill="#E8D5A5" letter-spacing="0.5">
       LEETCODE
     </text>
-    <text x="187" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="160" y="5" class="code-font" font-size="11" fill="#A6A29A">
       Top 9.35% (1780)
     </text>
 
-    <line x1="330" y1="-11" x2="330" y2="11" stroke="#493A23" stroke-width="1"/>
+    <line x1="300" y1="-11" x2="300" y2="11" stroke="#493A23" stroke-width="1"/>
 
     <!-- Item 4: Solved -->
-    <text x="355" y="5" class="code-font" font-size="11.5" font-weight="700" fill="#F0C978" letter-spacing="0.5">
+    <text x="325" y="5" class="code-font" font-size="11" font-weight="700" fill="#F0C978" letter-spacing="0.5">
       640+
     </text>
-    <text x="400" y="5" class="code-font" font-size="11" fill="#A6A29A">
+    <text x="368" y="5" class="code-font" font-size="11" fill="#A6A29A">
       Problems Solved
     </text>
   </g>

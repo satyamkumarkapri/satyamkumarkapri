@@ -41,7 +41,7 @@
 
 Hello, I'm **Satyam Kumar Kapri**.
 
-I'm a Computer Science and Engineering student at **KL University**, passionate about software engineering, artificial intelligence, machine learning, and solving complex computational problems.
+I'm a second-year Computer Science and Engineering student at **KL University**, passionate about software engineering, artificial intelligence, machine learning, and solving complex computational problems.
 
 I enjoy transforming ideas into practical applications, understanding the architecture behind intelligent systems, and building scalable software solutions. My interests lie at the intersection of engineering, innovation, and business.
 
@@ -325,7 +325,7 @@ Dynamic GitHub analytics sourced directly from active contributions:
 Verified academic standing and professional engineering certifications:
 
 ### 🎓 Academic Foundation
-- **Degree:** Bachelor of Technology — **Computer Science and Engineering**
+- **Degree:** Bachelor of Technology — **Computer Science and Engineering (2nd Year)**
 - **Institution:** **KL University, Guntur**
 - **Curriculum:** Project-Based Learning (PBL) Trimester Mode
 - **Academic Standing:** **9.12 / 10.0 CGPA** · Expected Graduation: **2029**
