@@ -504,6 +504,103 @@ def generate_metrics_card():
         f.write(svg)
     print("Generated:", path)
 
+def generate_project_metrics():
+    path = os.path.join(OUTPUT_DIR, "project-metrics.svg")
+    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 135" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="proj-card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15191F"/>
+      <stop offset="100%" stop-color="#101318"/>
+    </linearGradient>
+    <linearGradient id="proj-gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0C978"/>
+      <stop offset="50%" stop-color="#E8D5A5"/>
+      <stop offset="100%" stop-color="#C5A059"/>
+    </linearGradient>
+    <linearGradient id="proj-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#493A23"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#493A23"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .stat-font {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+    }
+  </style>
+
+  <!-- Metric 1: Featured Projects -->
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#proj-card-grad)" stroke="url(#proj-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#proj-gold-grad)" letter-spacing="1">
+      06
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
+      FEATURED PROJECTS
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Flagship Architectures
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 2: Core Domains -->
+  <g transform="translate(240, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#proj-card-grad)" stroke="url(#proj-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#proj-gold-grad)" letter-spacing="1">
+      05
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
+      CORE DOMAINS
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      AI · Systems · Full-Stack
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 3: Live Deployments -->
+  <g transform="translate(480, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#proj-card-grad)" stroke="url(#proj-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#proj-gold-grad)" letter-spacing="1">
+      06+
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
+      LIVE APPLICATIONS
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Production Deployments
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+
+  <!-- Metric 4: Public Repos -->
+  <g transform="translate(720, 0)">
+    <rect x="0" y="0" width="220" height="135" rx="10" fill="url(#proj-card-grad)" stroke="url(#proj-border)" stroke-width="1.2"/>
+    <path d="M 0 0 L 25 0 L 0 25 Z" fill="#C5A059" fill-opacity="0.3"/>
+    <text x="110" y="52" text-anchor="middle" class="stat-font" font-size="34" font-weight="900" fill="url(#proj-gold-grad)" letter-spacing="1">
+      30
+    </text>
+    <text x="110" y="78" text-anchor="middle" class="code-font" font-size="10.5" font-weight="700" fill="#E8D5A5" letter-spacing="1.5">
+      PUBLIC REPOSITORIES
+    </text>
+    <text x="110" y="100" text-anchor="middle" class="code-font" font-size="9.5" fill="#A6A29A" letter-spacing="0.5">
+      Open-Source Codebases
+    </text>
+    <line x1="70" y1="116" x2="150" y2="116" stroke="#C5A059" stroke-opacity="0.3" stroke-width="1"/>
+  </g>
+</svg>"""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(svg)
+    print("Generated:", path)
+
 def generate_gold_divider():
     path = os.path.join(OUTPUT_DIR, "gold-divider.svg")
     svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 24" width="100%" height="24" style="background: transparent;">
@@ -832,6 +929,7 @@ if __name__ == "__main__":
     generate_hero_banner()
     generate_terminal_profile()
     generate_metrics_card()
+    generate_project_metrics()
     generate_gold_divider()
     generate_engineering_roadmap()
     generate_profile_footer()

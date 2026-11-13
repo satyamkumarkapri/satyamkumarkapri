@@ -149,30 +149,72 @@ Curated technologies across enterprise systems, machine learning pipelines, and 
 
 ## 04 / SELECTED ENGINEERING PROJECTS
 
-Architectural implementations, systems software, and production applications:
+Architectural implementations, intelligent applications, systems software, and production-oriented products.
+
+<div align="center">
+  <img src="assets/project-metrics.svg" alt="Engineering Project Metrics" width="100%" />
+</div>
+
+<br/>
+
+### 🌟 Level 1 — Featured Engineering Systems
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🎯 [SkillTrack (SIH)](https://github.com/satyamkumarkapri/Skill_Track_Sih)
-**Skilling Outcomes & Impact Platform** · Smart India Hackathon (Problem ID: 26135)
+`01` · `AI / INTELLIGENT APPLICATIONS & GOVTECH`
 
-- **Technical Challenge:** Designing an end-to-end framework to track, aggregate, and analyze multi-institutional student skilling progression, certification metrics, and placement impact.
-- **Tech Stack:** `Next.js` `TypeScript` `React` `MongoDB` `Supabase` `Node.js`
-- **Key Features:** Real-time candidate analytics, outcome verification, role-based dashboards, and automated reporting pipelines.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Skill_Track_Sih) · [Live Platform](https://skilltrackmaharashtra.vercel.app)
+### 🎯 [SkillTrack Maharashtra](https://github.com/satyamkumarkapri/Skill_Track_Sih)
+*Skilling Outcomes & Impact Intelligence Platform · Smart India Hackathon (SIH 2026, Problem ID: 26135)*
+
+A full-stack data intelligence platform engineered for the Government of Maharashtra to trace trainee journeys longitudinally from enrollment through certification, placement retention, and 24-month career progression.
+
+**⚙️ Engineering Challenge:**
+Replacing fragmented, multi-department Excel spreadsheets with a centralized, high-throughput reporting pipeline capable of reconciling historical job market data against real-time trainee self-reports, preventing duplicate records, and modeling longitudinal salary trajectories with irregular reporting intervals.
+
+**🏗️ Architecture & Implementation:**
+Built on Next.js 14 App Router and Node.js Server Actions with MongoDB aggregation pipelines. Designed a dynamic skill-demand scoring algorithm, unified glassmorphism shared trainee profiles (`/profile/[id]`), role-based access control (Admin, Training Provider, Employer, Trainee), and encrypted security-question recovery.
+
+**🛠️ Tech Stack:**
+[![Next.js](https://img.shields.io/badge/NEXT.JS_14-15191F?style=flat-square&logo=nextdotjs&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![TypeScript](https://img.shields.io/badge/TYPESCRIPT-15191F?style=flat-square&logo=typescript&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![React](https://img.shields.io/badge/REACT-15191F?style=flat-square&logo=react&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![Node.js](https://img.shields.io/badge/NODE.JS-15191F?style=flat-square&logo=nodedotjs&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![MongoDB](https://img.shields.io/badge/MONGODB-15191F?style=flat-square&logo=mongodb&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![Tailwind](https://img.shields.io/badge/TAILWIND-15191F?style=flat-square&logo=tailwindcss&logoColor=F0C978)](https://github.com/satyamkumarkapri/Skill_Track_Sih)
+
+**⚡ Key Capabilities:**
+- **Dynamic Skill Gap Engine:** Calculates real-time market demand curves against actual regional trainee supply.
+- **Longitudinal Career Timeline:** Permanent, immutable trainee job retention logging with reason-for-exit tracking.
+- **Universal Shared Profiles:** Unified `/profile/[id]` with trainee privacy controls and employer verification consent.
+- **Multi-Role Governance:** Four discrete role dashboards for state admins, training providers, employers, and candidates.
+
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/Skill_Track_Sih) [![View Live Platform](https://img.shields.io/badge/VIEW_LIVE_PLATFORM-15191F?style=for-the-badge&logo=vercel&logoColor=F0C978&labelColor=101318)](https://skilltrackmaharashtra.vercel.app)
 
 </td>
 <td width="50%" valign="top">
+
+`02` · `SYSTEMS ENGINEERING & ALGORITHMIC OPTIMIZATION`
 
 ### 🏙️ [SmartCityX](https://github.com/satyamkumarkapri/SmartCityX)
-**Integrated Smart-City Analytics & Infrastructure Engine**
+*Integrated Smart-City Analytics & Infrastructure Optimization Engine*
 
-- **Technical Challenge:** Implementing complex algorithmic optimizations for city resource allocation, maximum flow algorithms, NP-completeness approximations for facility distribution, and real-time citizen report indexing.
-- **Tech Stack:** `Java` `Spring Boot` `PostgreSQL` `DSA Graph Theory` `Network Flow` `IoT Analytics`
-- **Key Features:** Document search & similarity scoring, resource flow optimization, parallel data processing, citizen incident reporting.
-- **Links:** [Web Repository](https://github.com/satyamkumarkapri/SmartCityX) · [CLI Repository](https://github.com/satyamkumarkapri/SmartCity_Cli)
+An enterprise-grade smart-city analytics engine combining Java 21, Spring Boot 3.2, and advanced Data Structures & Algorithms to solve large-scale municipal logistics, utility flow, and emergency resource allocation.
+
+**⚙️ Engineering Challenge:**
+Optimizing critical urban infrastructure networks (power grids, water flow, emergency vehicle dispatch) under NP-hard constraints while maintaining sub-second query latency across municipal document archives and real-time citizen incident logs.
+
+**🏗️ Architecture & Implementation:**
+Architected a modular Spring Boot system with PostgreSQL and Docker. Implemented Ford-Fulkerson, Edmonds-Karp, and Dinic's network flow algorithms for utility grids, 2-Approximation Vertex Cover for sensor placement, Suffix Arrays with Kasai LCP for document search, and KMP/Aho-Corasick for high-throughput citizen alert scanning.
+
+**🛠️ Tech Stack:**
+[![Java](https://img.shields.io/badge/JAVA_21-15191F?style=flat-square&logo=openjdk&logoColor=F0C978)](https://github.com/satyamkumarkapri/SmartCityX) [![Spring Boot](https://img.shields.io/badge/SPRING_BOOT_3.2-15191F?style=flat-square&logo=springboot&logoColor=F0C978)](https://github.com/satyamkumarkapri/SmartCityX) [![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-15191F?style=flat-square&logo=postgresql&logoColor=F0C978)](https://github.com/satyamkumarkapri/SmartCityX) [![Docker](https://img.shields.io/badge/DOCKER-15191F?style=flat-square&logo=docker&logoColor=F0C978)](https://github.com/satyamkumarkapri/SmartCityX) [![Chart.js](https://img.shields.io/badge/CHART.JS-15191F?style=flat-square&logo=chartdotjs&logoColor=F0C978)](https://github.com/satyamkumarkapri/SmartCityX)
+
+**⚡ Key Capabilities:**
+- **Network Flow Optimization:** Dinic's & Edmonds-Karp algorithms maximizing municipal water and power delivery.
+- **Suffix Automaton (SAM) Search:** Fast substring indexing and Kasai LCP across city documentation and records.
+- **Emergency Resource Matching:** Bipartite matching allocating municipal fleets (ambulances, tankers) to active alerts.
+- **Combinatorial Optimization:** Bitmask DP (Set Cover) & Vertex Cover approximation for minimum-cost facility distribution.
+
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/SmartCityX) [![Explore CLI Engine](https://img.shields.io/badge/EXPLORE_CLI_ENGINE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/SmartCity_Cli)
 
 </td>
 </tr>
@@ -180,24 +222,58 @@ Architectural implementations, systems software, and production applications:
 <tr>
 <td width="50%" valign="top">
 
-### 🏥 [HealthNet](https://github.com/satyamkumarkapri/HealthNet)
-**Intelligent Hospital Resource Management System**
-
-- **Technical Challenge:** Designing a robust concurrent hospital workflow handling patient priority queues, appointment lifecycle management, multi-department allocation, and sensitive medical data integrity.
-- **Tech Stack:** `Java 17` `OOP` `Multithreading` `Generics` `React` `Node.js` `MongoDB`
-- **Key Features:** Priority scheduling algorithms, automated queue dispatch, structured exception recovery, modular role-based views.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/HealthNet)
-
-</td>
-<td width="50%" valign="top">
+`03` · `SYSTEMS PROGRAMMING & NETWORK ENGINEERING`
 
 ### ⚡ [MicroHTTP Server](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server)
-**High-Concurrency HTTP/1.1 Web Server in C11**
+*High-Concurrency HTTP/1.1 Web Server in C11*
 
-- **Technical Challenge:** Architecting non-blocking I/O multiplexing with Linux sockets, epoll, and POSIX pthreads to handle concurrent client connections with low memory overhead and predictable latency.
-- **Tech Stack:** `C11` `Linux Sockets` `epoll` `pthreads` `HTTP/1.1 Parser` `Concurrency`
-- **Key Features:** Thread pool worker architecture, HTTP static file serving, keep-alive connection management, graceful signal handling and shutdown.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server)
+A high-throughput, non-blocking HTTP/1.1 web server engineered in pure C11 using Linux sockets, epoll I/O multiplexing, and POSIX threads.
+
+**⚙️ Engineering Challenge:**
+Eliminating thread-per-connection scaling bottlenecks and memory leaks by handling thousands of concurrent client connections with deterministic low latency, non-blocking sockets, zero-copy static file transfers, and safe state machine request parsing.
+
+**🏗️ Architecture & Implementation:**
+Engineered an event-driven worker-thread pool architecture using Linux `epoll` in edge-triggered mode. Built a custom HTTP/1.1 state machine parser, robust socket keep-alive timers, connection state tracking, MIME-type mapping, and clean POSIX signal handlers (`SIGINT`, `SIGTERM`) for graceful thread joins and resource teardown.
+
+**🛠️ Tech Stack:**
+[![C11](https://img.shields.io/badge/C11-15191F?style=flat-square&logo=c&logoColor=F0C978)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server) [![Linux](https://img.shields.io/badge/LINUX_EPOLL-15191F?style=flat-square&logo=linux&logoColor=F0C978)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server) [![POSIX Threads](https://img.shields.io/badge/PTHREADS-15191F?style=flat-square&logo=gnubash&logoColor=F0C978)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server) [![Sockets](https://img.shields.io/badge/SOCKETS-15191F?style=flat-square&logo=networkwired&logoColor=F0C978)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server) [![Makefile](https://img.shields.io/badge/MAKEFILE-15191F?style=flat-square&logo=gnu&logoColor=F0C978)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server)
+
+**⚡ Key Capabilities:**
+- **Edge-Triggered epoll:** $O(1)$ event notifications scaling to thousands of concurrent socket descriptors.
+- **Thread Pool Architecture:** Work queue decoupling connection listening from request execution to eliminate thrashing.
+- **HTTP/1.1 Protocol Engine:** Robust parsing of headers, methods, query parameters, keep-alive, and chunked transfer.
+- **Production Resource Hygiene:** Safe signal interception (`SIGINT`/`SIGTERM`) and valgrind-verified zero memory leakage.
+
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/Microhttp-concurrent-web-server)
+
+</td>
+<td width="50%" valign="top">
+
+`04` · `HEALTHCARE SYSTEMS & BACKEND ARCHITECTURE`
+
+### 🏥 [HealthNet](https://github.com/satyamkumarkapri/HealthNet)
+*Intelligent Hospital Resource Management System*
+
+An enterprise-grade, in-memory hospital resource orchestrator written in Java 17+ leveraging GoF design patterns and algorithmic triage to manage emergency workflows and critical assets.
+
+**⚙️ Engineering Challenge:**
+Coordinating emergency room patient flow, dynamic ICU bed/ventilator allocation, and surgeon availability in real time without external database latency, maintaining absolute thread safety and algorithmic priority under fluctuating trauma conditions.
+
+**🏗️ Architecture & Implementation:**
+Designed around thread-safe Singleton controllers for atomic state consistency, an event-driven Observer pattern triggering threshold alerts when critical physical inventory dips below 20%, and a Strategy pattern enabling runtime switching between QuickSort, HeapSort, and RadixSort in reporting modules.
+
+**🛠️ Tech Stack:**
+[![Java](https://img.shields.io/badge/JAVA_17-15191F?style=flat-square&logo=openjdk&logoColor=F0C978)](https://github.com/satyamkumarkapri/HealthNet) [![Design Patterns](https://img.shields.io/badge/GOF_PATTERNS-15191F?style=flat-square&logo=blueprint&logoColor=F0C978)](https://github.com/satyamkumarkapri/HealthNet) [![Concurrency](https://img.shields.io/badge/CONCURRENCY-15191F?style=flat-square&logo=speedtest&logoColor=F0C978)](https://github.com/satyamkumarkapri/HealthNet) [![Data Structures](https://img.shields.io/badge/DATA_STRUCTURES-15191F?style=flat-square&logo=databricks&logoColor=F0C978)](https://github.com/satyamkumarkapri/HealthNet)
+
+**⚡ Key Capabilities:**
+- **Emergency Triage Engine:** Priority patient ranking driven by dynamic severity scoring (1-100) via Max-Heap (`PriorityQueue`).
+- **Observer Alert Pipeline:** Real-time event notifications triggered whenever ICU beds or ventilator capacity dip below 20%.
+- **Strategy Sorting Context:** Runtime polymorphic switching between QuickSort, HeapSort, and RadixSort for clinical audits.
+- **In-Memory Graph Topology:** Zero-latency routing of patients and staff across hospital departments and specialties.
+
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/HealthNet) [![Web Version Repo](https://img.shields.io/badge/WEB_VERSION_REPO-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/Hospital-Resource-System)
 
 </td>
 </tr>
@@ -205,78 +281,78 @@ Architectural implementations, systems software, and production applications:
 <tr>
 <td width="50%" valign="top">
 
-### 🎭 [Banka Dandiya 6.0](https://github.com/satyamkumarkapri/Banka)
-**High-Performance Production Event Platform**
-
-- **Technical Challenge:** Delivering an ultra-responsive, 60fps animated digital experience handling high spikes of user traffic for pass bookings, schedule releases, and multimedia galleries.
-- **Tech Stack:** `React` `TypeScript` `Vite` `Tailwind CSS` `Framer Motion`
-- **Key Features:** Dynamic countdown timers, interactive pass tiers, embedded maps & location logistics, optimized lazy-loaded gallery.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Banka) · [Live Website](https://bankadandiya.vercel.app)
-
-</td>
-<td width="50%" valign="top">
+`05` · `BACKEND MICROSERVICES & POLYGLOT PERSISTENCE`
 
 ### 📦 [CatalogX](https://github.com/satyamkumarkapri/Product_Catalog)
-**API-Driven Product Catalog & E-Commerce Platform**
+*API-Driven Product Catalog & E-Commerce Microservices Platform*
 
-- **Technical Challenge:** Designing high-throughput REST APIs and low-latency search filters across nested product categories with robust data validation and inventory synchronization.
-- **Tech Stack:** `Java` `FastAPI` `Node.js` `Express` `REST APIs`
-- **Key Features:** Dynamic filtering, attribute indexing, category hierarchical trees, secure administrative endpoints.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Product_Catalog) · [Live Platform](https://productcatalogx.vercel.app)
+A high-scalability e-commerce platform demonstrating polyglot persistence across PostgreSQL and MongoDB Atlas with a FastAPI microservice gateway and semantic vector search.
 
-</td>
-</tr>
+**⚙️ Engineering Challenge:**
+Resolving the architectural tension between strictly normalized relational data (ACID transactions, checkout ledgers, user authentication) and flexible high-throughput unstructured product attributes, while providing sub-millisecond semantic search.
 
-<tr>
-<td width="50%" valign="top">
+**🏗️ Architecture & Implementation:**
+Built with a polyglot microservices architecture: FastAPI (Python) serves as the high-speed API Gateway and routing layer, Node.js/Express manages NoSQL document operations and semantic vector embeddings in MongoDB Atlas, and PostgreSQL manages relational inventory schemas and ACID checkout records, secured by stateless JWT and RBAC.
 
-### 🧭 [Hospital Navigation System](https://github.com/satyamkumarkapri/HospitalNavigationSystem)
-**Algorithmic Medical Facility Pathfinding & Search**
+**🛠️ Tech Stack:**
+[![FastAPI](https://img.shields.io/badge/FASTAPI-15191F?style=flat-square&logo=fastapi&logoColor=F0C978)](https://github.com/satyamkumarkapri/Product_Catalog) [![Node.js](https://img.shields.io/badge/NODE.JS-15191F?style=flat-square&logo=nodedotjs&logoColor=F0C978)](https://github.com/satyamkumarkapri/Product_Catalog) [![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-15191F?style=flat-square&logo=postgresql&logoColor=F0C978)](https://github.com/satyamkumarkapri/Product_Catalog) [![MongoDB](https://img.shields.io/badge/MONGODB-15191F?style=flat-square&logo=mongodb&logoColor=F0C978)](https://github.com/satyamkumarkapri/Product_Catalog) [![Docker](https://img.shields.io/badge/DOCKER-15191F?style=flat-square&logo=docker&logoColor=F0C978)](https://github.com/satyamkumarkapri/Product_Catalog)
 
-- **Technical Challenge:** Formulating optimal multi-floor route guidance through complex healthcare complexes using graph search and shortest-path algorithms.
-- **Tech Stack:** `Java` `JavaScript` `Dijkstra / BFS Search` `Web UI`
-- **Key Features:** Point-to-point step guidance, department query parsing, emergency route prioritization, interactive map visualizations.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/HospitalNavigationSystem) · [Live Deployment](https://hospitalnavigationsystem.onrender.com)
+**⚡ Key Capabilities:**
+- **Polyglot Persistence:** Combined PostgreSQL relational ledger with MongoDB Atlas unstructured catalog document store.
+- **Intelligent API Gateway:** FastAPI service handling reverse proxy routing, CORS resolution, and request validation.
+- **AI-Powered Semantic Search:** Vector similarity matching paired with deep category hierarchy and attribute indexing.
+- **Enterprise Security:** Stateless JWT authentication with Role-Based Access Control (Admin, Vendor, Customer).
 
-</td>
-<td width="50%" valign="top">
-
-### 📊 [COVID-19 Data Analysis](https://github.com/satyamkumarkapri/Covid-19-Data-Analysis)
-**Global Epidemiological Intelligence & ML Visualizer**
-
-- **Technical Challenge:** Cleaning, transforming, and modeling massive JHU CSSE time-series datasets to forecast infection trajectories and generate actionable epidemiological insights.
-- **Tech Stack:** `Python` `Pandas` `NumPy` `Scikit-learn` `Hugging Face Spaces`
-- **Key Features:** Interactive epidemiological curves, comparative country benchmarking, trend extrapolation, hosted public ML model space.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Covid-19-Data-Analysis) · [Live Model Space](https://satyamkumarkapri-covid-19dataanalysis.hf.space)
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 💳 [PhonePe System Simulator](https://github.com/satyamkumarkapri/PhonePeProjectPBL)
-**Core Java Transaction Processing & Lifecycle Simulation**
-
-- **Technical Challenge:** Implementing thread-safe payment ledger logic, wallet state transitions, and undo/redo audit logs using primitive data structures.
-- **Tech Stack:** `Java 17` `OOP Design Patterns` `HashMap` `Stack` `Queue`
-- **Key Features:** Double-entry ledger simulation, queue-based transaction dispatch, LIFO rollback logs, balance verification.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/PhonePeProjectPBL)
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/Product_Catalog) [![View Live Platform](https://img.shields.io/badge/VIEW_LIVE_PLATFORM-15191F?style=for-the-badge&logo=vercel&logoColor=F0C978&labelColor=101318)](https://product-catalog-ten-gamma.vercel.app)
 
 </td>
 <td width="50%" valign="top">
 
-### 🎯 [Placements Prediction](https://github.com/satyamkumarkapri/Placements_Prediction)
-**Supervised Machine Learning Placement Engine**
+`06` · `FULL-STACK WEB PLATFORM & EVENT LOGISTICS`
 
-- **Technical Challenge:** Feature engineering multi-dimensional academic histories, aptitude benchmarks, and internships to classify placement probabilities with high precision.
-- **Tech Stack:** `Python` `Scikit-learn` `Classification Algorithms` `Flask / HTML`
-- **Key Features:** Real-time inference form, feature importance breakdowns, confusion matrix tuning, cloud container deployment.
-- **Links:** [GitHub Repository](https://github.com/satyamkumarkapri/Placements_Prediction) · [Live App](https://placements-prediction-8wt4.onrender.com)
+### 🎭 [Banka Dandiya 6.0](https://github.com/satyamkumarkapri/Banka)
+*High-Performance Production Event & Ticketing Platform*
+
+A high-performance, production event web platform serving thousands of attendees with real-time pass booking, animated schedules, and interactive logistics.
+
+**⚙️ Engineering Challenge:**
+Delivering an ultra-responsive, 60fps interactive web experience under peak burst traffic during ticket release windows, while preserving optimal asset compression, zero layout shifts, and mobile responsiveness.
+
+**🏗️ Architecture & Implementation:**
+Built with React, TypeScript, and Vite, using Tailwind CSS and Framer Motion for hardware-accelerated animations. Integrated responsive pass tier selection, modal-driven booking workflows, dynamic countdown timers, lazy-loaded media galleries, embedded venue mapping, and WhatsApp API integration.
+
+**🛠️ Tech Stack:**
+[![React](https://img.shields.io/badge/REACT_18-15191F?style=flat-square&logo=react&logoColor=F0C978)](https://github.com/satyamkumarkapri/Banka) [![TypeScript](https://img.shields.io/badge/TYPESCRIPT-15191F?style=flat-square&logo=typescript&logoColor=F0C978)](https://github.com/satyamkumarkapri/Banka) [![Vite](https://img.shields.io/badge/VITE-15191F?style=flat-square&logo=vite&logoColor=F0C978)](https://github.com/satyamkumarkapri/Banka) [![Tailwind](https://img.shields.io/badge/TAILWIND_CSS-15191F?style=flat-square&logo=tailwindcss&logoColor=F0C978)](https://github.com/satyamkumarkapri/Banka) [![Framer Motion](https://img.shields.io/badge/FRAMER_MOTION-15191F?style=flat-square&logo=framer&logoColor=F0C978)](https://github.com/satyamkumarkapri/Banka) [![Vercel](https://img.shields.io/badge/VERCEL-15191F?style=flat-square&logo=vercel&logoColor=F0C978)](https://bankadandiya.vercel.app)
+
+**⚡ Key Capabilities:**
+- **Production Ticketing Interface:** Multi-tier pass booking with modal confirmation and WhatsApp customer logistics.
+- **Hardware-Accelerated UX:** 60fps fluid UI animations with floating particle canvas and smooth scroll choreography.
+- **Interactive Logistics:** Real-time event countdown clock, venue GPS coordinate mapping, and social sharing mechanics.
+- **Zero-CLS Mobile Optimization:** High-efficiency bundle splitting and lazy-loaded galleries tuned for low-latency mobile devices.
+
+**🔗 Project Links:**
+[![Explore Source Code](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-15191F?style=for-the-badge&logo=github&logoColor=F0C978&labelColor=101318)](https://github.com/satyamkumarkapri/Banka) [![View Live Platform](https://img.shields.io/badge/VIEW_LIVE_PLATFORM-15191F?style=for-the-badge&logo=vercel&logoColor=F0C978&labelColor=101318)](https://bankadandiya.vercel.app)
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+### 🗂️ Level 2 — More Engineering Work
+
+A curated index of specialized systems software, algorithmic simulators, machine learning models, and production web platforms:
+
+| Project | Core Domain & Focus | Primary Technologies | Verified Links |
+| :--- | :--- | :--- | :--- |
+| **HospNav AI** | Multi-floor hospital pathfinding with A*, UCS, IDA*, medical triage expert system, and CSP staff scheduling | `Python` `Flask` `Heuristic Search` `CSP` | [Codebase](https://github.com/satyamkumarkapri/HospitalNavigationSystem) · [Live App](https://hospitalnavigationsystem.onrender.com) |
+| **COVID-19 Analysis** | Interactive data science visualizer & predictive regression dashboard for global pandemic time-series data | `Python` `Pandas` `Scikit-learn` `Gunicorn` | [Codebase](https://github.com/satyamkumarkapri/Covid-19-Data-Analysis) · [Hugging Face Space](https://huggingface.co/spaces/satyamkumarkapri/Covid-19DataAnalysis) |
+| **CampusFind** | Full-stack centralized lost-and-found recovery platform with multi-campus isolation and role authentication | `React` `TypeScript` `Spring Boot` `Neon PG` | [Codebase](https://github.com/satyamkumarkapri/CampusFind) |
+| **ShellForge** | Custom UNIX POSIX shell with tokenization, AST parser, command execution, piping, and history management | `C11` `UNIX Sockets` `POSIX API` `Makefile` | [Codebase](https://github.com/satyamkumarkapri/ShellForge) |
+| **PhonePe Simulator** | Object-oriented transaction processor modeling double-entry ledgers, wallet states, and rollback stacks | `Java 17` `OOP Patterns` `Stack` `Queue` | [Codebase](https://github.com/satyamkumarkapri/PhonePeProjectPBL) |
+| **Placements Prediction** | Machine learning classification model evaluating academic and aptitude metrics to forecast student placement | `Python` `Scikit-learn` `Flask` `Render` | [Codebase](https://github.com/satyamkumarkapri/Placements_Prediction) · [Live App](https://placements-prediction-8wt4.onrender.com) |
+| **Kishan Traders** | Production commercial web application and digital product showcase for regional wholesale building materials | `React` `JavaScript` `Responsive UI` `Vercel` | [Live Website](https://kishan-traders.vercel.app) |
 
 <div align="center">
   <img src="assets/gold-divider.svg" alt="divider" width="100%" />
